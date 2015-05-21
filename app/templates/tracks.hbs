@@ -1,0 +1,58 @@
+<div {{bind-attr class=":tracks design"}}>
+  {{render "filtersmenu" model}}
+
+  {{outlet}}
+  {{#if cassetteDesign}}
+    {{render "cassette" model}}
+  {{/if}}
+  {{#if tableDesign}}
+  <table class="tracks-table">
+  <tbody>
+        {{#each track in model.tracks}}
+          {{#link-to 'track' track tagName='tr' data-trackid=track.id}}
+            {{!--<td class='track_id'>{{track.id}}</td>--}}
+            <td class='track_author'>
+                {{#link-to 'tracks' (query-params user=track.author page=1) bubbles=false}}{{track.author}}{{/link-to}}
+            </td>
+            <td class='track_name'>{{track.name}}</td>
+            <td class='track_tags'>
+              {{#each tag in track.tag}}
+                {{#link-to 'tracks' (query-params tag=tag.name page=1) bubbles=false}}{{tag.name}}{{/link-to}} 
+              {{/each}}
+            </td>
+            <td class='track_channel'>{{#link-to 'tracks' (query-params channel=track.channel page=1) bubbles=false}}{{track.channel}}{{/link-to}}</td>
+          {{/link-to}}
+        {{/each}}
+        </tbody>
+    </table>
+  {{partial "pagination"}}
+{{/if}}
+{{#if colorGridDesign}}
+<div class="tracks-colorGrid">
+        {{#each track in model.tracks}}
+          {{#link-to 'track' track class="grid-item" data-trackid=track.id}}
+            <p class='track'>
+              <span class="track_author">{{track.author}}</span> 
+              <span class="track_channel">{{track.channel}}</span> 
+              <br/> 
+            </p>
+            <p>
+              <br/>
+              <span class="track_name">
+                {{track.name}} 
+              </span>
+            </p>
+            <p class='track'>
+              <br/>
+              {{#each tag in track.tag}}
+                {{tag.name}} 
+              {{/each}}
+            </p>
+          {{/link-to}}
+        {{/each}}
+    {{partial "pagination"}}
+  </div>
+
+  {{/if}}
+</div>
+

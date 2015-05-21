@@ -1,5 +1,7 @@
 /* global require, module */
 
+
+
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp();
@@ -17,4 +19,13 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
+app.import('bower_components/cheet.js/cheet.min.js');
+app.import('bower_components/pace/pace.min.js');
+app.import('bower_components/datedropper/datedropper.min.js');
+
+app.import('vendor/boombox.js');
+app.import('vendor/turntables.js');
+app.import('vendor/cheet-sounds.js');
+
 module.exports = app.toTree();
+

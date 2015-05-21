@@ -1,0 +1,5 @@
+<div class="users">
+  {{#each user in controller}} {{!itemController='user'}}
+  {{#link-to 'tracks' (query-params user=user.model.name) tagName='div' title=user.info style=user.style class=user.category}} {{user.model.name}} {{/link-to}} 
+  {{/each}}
+</div>

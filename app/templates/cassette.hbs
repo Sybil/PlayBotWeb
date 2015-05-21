@@ -1,0 +1,46 @@
+<iframe id="iframe" class="cassette" frameborder="no" src=""></iframe>
+<div id="vc-container" class="cassette-holder">
+    <div class="tape">
+        <div class="cassette-back">
+          <div class="wheels left-wheel"><div></div></div>
+          <div class="wheels right-wheel"><div></div></div>
+        </div>
+        <div class="cassette-front">
+          <span>A</span>
+          <p class="tape-name">{{track.name}}</p>
+        </div>
+      <div class="tape-info info-hover">
+        <p>{{track.id}}</p>
+        <p>{{track.name}}</p>
+        <p>{{track.channel}}</p>
+        <p>{{track.author}}</p>
+        <p>{{#each tag in track.tag}}
+          {{tag.name}} 
+          {{/each}}</p>
+      </div>
+    </div>
+
+  <ul class="vc-controls">
+      <li class='vc-control-play' {{action "playButton"}}>
+        <i class='fa fa-play'></i>  Play
+      </li>
+      <li class="vc-control-rewind">
+        <i class='fa fa-backward'></i>  Rew
+      </li>
+      <li class="vc-control-fforward">
+        <i class='fa fa-forward'></i>  FF
+      </li>
+      <li class="vc-control-stop" {{action "stopButton"}}>
+        <i class='fa fa-stop'></i>  Stop
+      </li>
+      <li class="vc-control-switch" {{action "nextButton"}}>
+        Random
+      </li>
+  </ul>
+  <div class="vc-volume-wrap">
+      <div class="vc-volume-control">
+          <div class="vc-volume-knob"></div>
+      </div>
+  </div>
+</div>
+

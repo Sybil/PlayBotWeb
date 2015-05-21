@@ -13,6 +13,16 @@ module.exports = function(environment) {
       }
     },
 
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' w.soundcloud.com www.youtube.com s.ytimg.com",
+      'font-src': "'self' maxcdn.bootstrapcdn.com",
+      'connect-src': "'self' api-playbot.skizzk.fr soundcloud.com",
+      'img-src': "'self'",
+      'style-src': "'self' 'unsafe-inline' maxcdn.bootstrapcdn.com",
+      'frame-src': "www.youtube.com w.soundcloud.com"
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created

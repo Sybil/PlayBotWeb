@@ -1,0 +1,34 @@
+<ul class="menu" {{action 'menu'}}>
+  <li>
+    {{#link-to 'index'}}
+      <i class='logo fa fa-fw fa-bookmark-o'></i>
+      <span>Home</span>
+    {{/link-to}}
+  </li>
+  <li>
+    {{#link-to 'tracks' classNames='text'}}
+      <i class="fa fa-fw fa-music"></i>
+      <span>Tracks</span>
+    {{/link-to}}
+  </li>
+  <li>
+    {{#link-to 'users' classNames='text'}}
+      <i class="fa fa-fw fa-users"></i>
+      <span>Users</span>
+    {{/link-to}}
+  </li>
+  <li>
+    {{#link-to 'channels' classNames='text'}}
+      <i class="fa fa-fw fa-slack"></i>
+      <span>Channels</span>
+    {{/link-to}}
+  </li>  
+  <li>  
+    {{#link-to 'about' classNames="text"}}
+      <i class="fa fa-fw fa-info" ></i>
+      <span>About</span>
+    {{/link-to}}
+  </li>
+</ul>
+<button {{action 'menu'}} class="menu-button"><i class="fa fa-bars"></i></button>
+<div class="fade-menu" {{action 'menu'}}></div>
