@@ -465,7 +465,7 @@ html
 
   $base-accent-color: #477DCA !default
 
-  $channel-colors: desaturate($base-accent-color, 30%), #F7C808, #3581A5, #5FBEBE, #98C79A, #D2315D, #A7A891, #389090, #F47E7D, #B5D045, #FB8335, #81C0C5, #E98813, #22B5BF, #8767A6, #88C134
+  $channel-colors: desaturate($base-accent-color, 30%), #3581A5, #F7C808, #5FBEBE, #98C79A, #D2315D, #A7A891,    #389090, #F47E7D, #B5D045, #FB8335, #81C0C5,       #E98813, #22B5BF, #8767A6, #88C134
   //#E0C7A8,#BDCC97,#979EA0, 
 
   @include clearfix
@@ -777,12 +777,7 @@ ul.vc-controls li,
 
 // About css
 
-.about
-  overflow-x: hidden
-
-.flex-boxes
-  height: 100vh
- 
+.flex-boxes 
   $base-border-radius: 3px !default
   $base-background-color: white !default
   $dark-gray: #333 !default
@@ -796,23 +791,25 @@ ul.vc-controls li,
   $flex-box-color: transparentize($base-font-color, 0.3)
   $flex-box-top-colors: tomato, #72BFBF, #92B1E3, #E3D743, #CCC, #F6C05C
 
-  //@include clearfix
+  @include clearfix
   @include display(flex)
   @include justify-content(center)
   @include align-items(stretch)
-  @include align-content(stretch)
   @include flex-wrap(wrap)
-  @include flex-direction(row)
+  clear: both
   text-align: center
 
   .flex-box 
     @include transition (all 0.2s ease-in-out)
-    @include flex(1 0 30em)
+    @include flex(2 2 15em)
+    @include align-self(stretch)
     background: $flex-box-background
     border-radius: $base-border-radius
     box-shadow: inset 0 0 1px $flex-box-border-color, 0 2px 4px darken($base-background-color, 10%)
+    display: block
     margin: $flex-box-gutter
     padding: 2em 2em 3em 2em
+    text-decoration: none
 
     @for $i from 1 to 7  
       // assign colors from $flex-box-top-colors list
@@ -823,9 +820,11 @@ ul.vc-controls li,
         &:focus, &:hover 
           background-color: transparentize($color-from-list, 0.9)
 
-    img, .icon
-      color: $flex-box-color
-      font-size: 4em
+    img 
+      display: block
+      height: 3em
+      margin-bottom: 2em
+      margin: auto
       opacity: 0.4
 
     .flex-title 
@@ -836,9 +835,8 @@ ul.vc-controls li,
 
     p 
       color: transparentize($flex-box-color, 0.1)
-      line-height: 1.3em
+      line-height: 1.5em
       margin: auto
-      text-align: justify
-
-  .flex-box.flex-box-big 
-    @include flex(2 0 40em)
+  
+  .flex-box-big 
+    @include flex(1 1 40em)
