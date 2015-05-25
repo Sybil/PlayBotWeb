@@ -16,7 +16,7 @@
             </td>
             <td class='track_name'>{{track.name}}</td>
             <td class='track_tags'>
-              {{#each tag in track.tag}}
+              {{#each tag in track.tags}}
                 {{#link-to 'tracks' (query-params tag=tag.name page=1) bubbles=false}}{{tag.name}}{{/link-to}} 
               {{/each}}
             </td>
@@ -44,7 +44,7 @@
             </p>
             <p class='track'>
               <br/>
-              {{#each tag in track.tag}}
+              {{#each tag in track.tags}}
                 {{tag.name}} 
               {{/each}}
             </p>

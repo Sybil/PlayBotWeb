@@ -52,9 +52,13 @@ var CassetteController = Ember.Controller.extend({
 
   actions: {
     playButton: function() {
+      var audio = new Audio('/assets/samples/click.ogg');
+      audio.play();
       this.play();
     },
     stopButton: function() {
+      var audio = new Audio('/assets/samples/click.ogg');
+      audio.play();
       var track = this.model.tracks.content[this.get('n')];
       stop_cassette(track);
     },

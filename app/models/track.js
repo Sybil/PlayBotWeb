@@ -6,4 +6,6 @@ export default DS.Model.extend({
   author: DS.attr('string'),
   channel: DS.attr('string'),
   provider: DS.attr('string'),
+
+  tags: DS.hasMany('tag', {async: false})
 });

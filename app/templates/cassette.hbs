@@ -14,7 +14,7 @@
         <p>{{track.name}}</p>
         <p>{{track.channel}}</p>
         <p>{{track.author}}</p>
-        <p>{{#each tag in track.tag}}
+        <p>{{#each tag in track.tags}}
           {{tag.name}} 
           {{/each}}</p>
       </div>
@@ -34,7 +34,7 @@
         <i class='fa fa-stop'></i>  Stop
       </li>
       <li class="vc-control-switch" {{action "nextButton"}}>
-        Random
+        Next
       </li>
   </ul>
   <div class="vc-volume-wrap">
