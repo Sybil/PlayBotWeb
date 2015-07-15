@@ -22,6 +22,7 @@ var app = new EmberApp();
 app.import('bower_components/cheet.js/cheet.min.js');
 app.import('bower_components/pace/pace.min.js');
 app.import('bower_components/datedropper/datedropper.min.js');
+app.import('bower_components/spin.js/spin.min.js');
 
 app.import('vendor/boombox.js');
 app.import('vendor/turntables.js');

@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 var TracksController = Ember.Controller.extend({
+  sortProperties: ['quantity'],
+  sortAscending: true,
+
   queryParams: ['tag','user','channel','date','page','design'],
   tag: null,
   date: '',
@@ -50,14 +53,6 @@ var TracksController = Ember.Controller.extend({
   notLastPage: function() {
     return (this.get('page') < this.get('totalPages'));
   }.property('page', 'totalPages'),
-
-  dotsBefore: function() {
-    return (this.get('page') - 2 > 1);
-  }.property('page'),
-
-  dotsAfter: function() {
-    return (this.get('page') + 2 < this.get('totalPages'));
-  }.property('page','totalPages'),
 
   pagesRange: function () {
     var pagesList = Ember.A();

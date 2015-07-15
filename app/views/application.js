@@ -2,7 +2,9 @@ import Ember from 'ember';
 
 var ApplicationView = Ember.View.extend({
   didInsertElement: function() {
-    $('body').removeClass('preload');
+    $(window).load(function() {
+      $('body').removeClass('preload');
+    });
   }
 });
 

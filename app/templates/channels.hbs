@@ -1,6 +1,6 @@
 <div class="channels">
   {{#each channel in controller}}
-    {{#link-to 'tracks' (query-params channel=channel.model.name) tagName='div' style=channel.style class=channel.category title=channel.info}}
+    {{#link-to 'tracks' (query-params channel=channel.model.name page=1) tagName='div' style=channel.style class=channel.category title=channel.info}}
       {{channel.model.name}}
     {{/link-to}} 
   {{/each}}

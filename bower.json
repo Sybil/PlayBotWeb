@@ -17,6 +17,7 @@
     "datedropper": "*",
     "pace": "~1.0.2",
     "cheet.js": "~0.3.3",
-    "normalize.css": "~3.0.3"
+    "normalize.css": "~3.0.3",
+    "spin.js": "~2.3.1"
   }
 }

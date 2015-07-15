@@ -1,13 +1,10 @@
 <div class="pagination">
   <ul>
     {{#if notFirstPage}}
-        <li class="page-prev">{{#link-to (query-params page=1)}}First{{/link-to}}</li>
-        <li class="page-prev">{{#link-to (query-params page=prevPage)}}Previous{{/link-to}}</li>
+        <li class="page-prev">{{#link-to (query-params page=1)}}<i class="fa fa-angle-double-left"></i>{{/link-to}}</li> 
+        <li class="page-prev">{{#link-to (query-params page=prevPage)}}<i class="fa fa-angle-left"></i>{{/link-to}}</li> 
     {{/if}}
     <li>
-    {{#if dotsBefore}}
-        <li> ... </li>
-    {{/if}}
       <ul>
         {{#each page in pagesRange}}
           <li>{{#link-to (query-params page=page)}}{{page}}{{/link-to}}</li>
@@ -15,12 +12,9 @@
         {{!-- <li><a class="current">{{currentPage}}</a></li> --}}
       </ul>
     </li>
-    {{#if dotsAfter}}
-      <li> ... </li>
-    {{/if}}
     {{#if notLastPage}}
-        <li class="page-next">{{#link-to (query-params page=nextPage)}}Next{{/link-to}}</li> 
-        <li class="page-next">{{#link-to (query-params page=totalPages)}}Last ({{totalPages}}){{/link-to}}</li>
+        <li class="page-next">{{#link-to (query-params page=nextPage)}}<i class="fa fa-angle-right"></i>{{/link-to}}</li> 
+        <li class="page-next">{{#link-to (query-params page=totalPages)}}{{totalPages}}{{/link-to}}</li>
     {{/if}}
   </ul>
 </div>

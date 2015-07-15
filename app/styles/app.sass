@@ -105,6 +105,7 @@ html
     overflow: hidden
     //text-overflow: ellipsis
     white-space: nowrap
+    font-weight: 600
     @media screen and (max-device-width: 640px), screen and (max-width: 800px)
       @include span-columns(2.6)
       //span
@@ -273,12 +274,11 @@ html
   border-collapse: collapse//separate //collapse
   border-spacing: 0
 
-  tbody 
-    //background-color: $table-background
+  tbody
+    tr.active > td.track_name
+      font-weight: 600    
     tr:hover > td, tr.active > td
       background-color: $table-hover-background
-      //border-color: $standard_secondary_color
-      //border-bottom: 1px solid $standard_secondary_color
       color: $standard_secondary_color
 
     //tr:last-child td 
@@ -437,8 +437,8 @@ html
   @include flex-grow(1)
   @include flex-basis(200px)
 
-
-  background: url('/assets/images/vinyl_prog.jpg')
+  //@include background-image(linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.9)), url("/assets/images/vinyl_prog.jpg"))
+  background: black url(/assets/images/vinyl_prog_2.jpg)
   background-size: cover
   background-position: bottom
 
@@ -449,7 +449,7 @@ html
     text-align: center
     a
       font-family: wire
-      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black
+      //text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black
       @include filter(drop-shadow(1px 1px 1px rgba(0,0,0,0.9)))
       font-size: 7em
       font-weight: bold
@@ -459,7 +459,8 @@ html
       margin-bottom: 1em
     p
       text-align: center
-      font-size: 1em
+      font-size: 1.6em //1.5em
+      color: white //#bdc3c7
       margin-bottom: 0.5em
 
 
@@ -507,6 +508,10 @@ html
           min-width: 150px
           color: black
        
+.loader
+  width: 100vw
+  height: 100vh
+
 // -------------------------------------------------------------
 // Design for pace plugin
 
@@ -541,7 +546,7 @@ html
 // ---------------------------------------------------------------------------
 // Cassette design
 .cassette
-  background-image: url("/assets/images/cassette/mixtable_bw.jpg") 
+  background: url("/assets/images/cassette/mixtable_bw.jpg") 
   background-size: cover
   background-position: center
   height: 100vh
