@@ -1,26 +1,20 @@
-/* jshint node: true */
+/* eslint-env node */
 
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'playbot-web',
     environment: environment,
-    baseURL: '/',
+    rootURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
+      },
+      EXTEND_PROTOTYPES: {
+        // Prevent Ember Data from overriding Date.parse.
+        Date: false
       }
-    },
-
-    contentSecurityPolicy: {
-      'default-src': "'none'",
-      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' w.soundcloud.com www.youtube.com s.ytimg.com",
-      'font-src': "'self' maxcdn.bootstrapcdn.com",
-      'connect-src': "'self' api-playbot.skizzk.fr soundcloud.com",
-      'img-src': "'self'",
-      'style-src': "'self' 'unsafe-inline' maxcdn.bootstrapcdn.com",
-      'frame-src': "www.youtube.com w.soundcloud.com"
     },
 
     APP: {
@@ -39,7 +33,6 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.baseURL = '/';
     ENV.locationType = 'none';
 
     // keep test console output quieter

@@ -1,0 +1,45 @@
+.menu
+  $action-color: #477DCA !default
+  $dark-gray: #333 !default
+  $sliding-panel-border-color: $dark-gray
+  $sliding-panel-background: lighten($sliding-panel-border-color, 5%)
+  $sliding-panel-color: #fff
+  $sliding-panel-border: 1px solid $sliding-panel-border-color
+  $sliding-panel-background-hover: $action-color
+  $sliding-panel-color-hover: #fff
+  $sliding-panel-background-focus: lighten($sliding-panel-background, 5%)
+
+  @include position(fixed)
+  @include transform(translateY(-60px)) //X(-160px))
+  @include transition(all 0.25s linear)
+  background: $standard_color //$sliding-panel-background
+  z-index: 999998
+  width: 100%
+  li a
+    @include span-columns(1.5)
+    height: 50px
+    border-right: 1px solid #2e2e2e //border-bottom $sliding-panel-border
+    color: $sliding-panel-color
+    display: block
+    font-size: 1.1em
+    padding: 1em
+    text-decoration: none
+    overflow: hidden
+    //text-overflow: ellipsis
+    white-space: nowrap
+    font-weight: 600
+    @media screen and (max-device-width: 640px), screen and (max-width: 800px)
+      @include span-columns(2.6)
+      //span
+        display: none
+
+    &:focus, &.active
+      background-color: $standard_light_color //$sliding-panel-background-focus
+
+    &:hover
+      background-color: $sliding-panel-background-hover
+      color: $sliding-panel-color-hover
+
+  &.is-visible
+    @include transform(translateY(0))
+

@@ -1,0 +1,67 @@
+.tracks-colorGrid
+
+  width: 100%
+  margin-right: calc(100% - 100Vw)
+
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  align-content: flex-start
+  justify-content: stretch
+  align-items: stretch
+  //height: 100vh
+
+  $base-accent-color: #477DCA !default
+  $base-background-color: white !default
+
+  p
+    line-height: 1.5em
+  a
+    text-decoration: none
+
+  $grid-items-background: $base-background-color
+  $grid-item-background: desaturate($base-accent-color, 30%)
+  $grid-item-colors: desaturate($base-accent-color, 30%), #3581A5, #F7C808, #5FBEBE, #98C79A, #D2315D, #A7A891,    #389090, #F47E7D, #B5D045, #FB8335, #81C0C5,       #E98813, #22B5BF, #8767A6, #88C134
+
+  .grid-item
+    flex-grow: 1
+    align-items: center
+    justify-content: center
+    flex-basis: 500px
+
+    @include transition (all 0.2s ease-in-out)
+    background: $grid-item-background
+    margin: 2px
+    cursor: pointer
+    padding: 2em
+    @extend .hvr-trim
+
+    @for $i from 1 through 51 //length($grid-item-colors)
+      &:nth-child(#{$i})
+        $background-from-list: nth($grid-item-colors, $i % 16 + 1)
+        $background-color: transparentize($background-from-list, 0.8)
+        background-color: $background-color
+
+        &:focus, &:hover, &.active
+          background-color: transparentize($background-from-list, 0.4)
+          //@extend .hvr-trim
+
+  .grid-item p
+    margin: auto
+    color: #595959 //rgb(180,180,180)
+
+  span.track_author
+    float: left
+
+  span.track_channel
+    float: right
+
+  span.track_name
+    font-size: 1.1em
+    color: black
+
+  .pagination
+    flex-grow: 1
+    width: 100vw
+    margin: 1em
+

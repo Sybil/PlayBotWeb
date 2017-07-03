@@ -1,0 +1,22 @@
+.wheels div
+  //@include animation(scroll 5s ease infinite)
+  @include keyframes(rotateLeft)
+    from
+      transform: rotate(0deg) translateZ(-1px)
+    to
+      transform: rotate(-360deg) translateZ(-1px)
+
+  @include keyframes(rotateRight)
+    from
+      transform: rotate(0deg) translateZ(-1px)
+    to
+      transform: rotate(360deg) translateZ(-1px)
+
+  width: 100%
+  height: 100%
+  background: transparent url(/assets/images/cassette/cs_wheel.png) no-repeat center center
+
+.spin
+  animation: rotateLeft 2s linear infinite forwards
+
+

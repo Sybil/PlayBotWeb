@@ -3,26 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Playbot</title>
-    <meta name="description" content="Listen to handpicked electro tracks.">
+    <title>PlaybotWeb</title>
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="/assets/favicon-coffee.ico">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-    {{content-for 'head'}}
+    {{content-for "head"}}
 
-    <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/playbot-web.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/playbot-web.css">
 
-    {{content-for 'head-footer'}}
+    {{content-for "head-footer"}}
   </head>
-  <body class="preload">
-    {{content-for 'body'}}
-
+  <body>
+    {{content-for "body"}}
     <script src="https://w.soundcloud.com/player/api.js"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
-    <script src="assets/vendor.js"></script>
-    <script src="assets/playbot-web.js"></script>
-    {{content-for 'body-footer'}}
+    <script src="{{rootURL}}assets/vendor.js"></script>
+    <script src="{{rootURL}}assets/playbot-web.js"></script>
+
+    {{content-for "body-footer"}}
   </body>
 </html>

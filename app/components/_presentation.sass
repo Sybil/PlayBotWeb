@@ -1,0 +1,33 @@
+.presentation
+  height: 100vh
+  @include display(flex)
+  @include flex-grow(1)
+  @include flex-basis(200px)
+
+  //@include background-image(linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.9)), url("/assets/images/vinyl_prog.jpg"))
+  background: black url(/assets/images/vinyl_prog_2.jpg)
+  background-size: cover
+  background-position: bottom
+
+  .abstract
+    color: white
+    margin: auto
+    //padding: 3.5em
+    text-align: center
+    a
+      font-family: wire
+      //text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black
+      @include filter(drop-shadow(1px 1px 1px rgba(0,0,0,0.9)))
+      font-size: 7em
+      font-weight: bold
+      color: #2098d1 //white
+    img
+      height: 30vh //10em
+      margin-bottom: 1em
+    p
+      text-align: center
+      font-size: 1.6em //1.5em
+      color: white //#bdc3c7
+      margin-bottom: 0.5em
+
+

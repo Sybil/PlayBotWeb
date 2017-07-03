@@ -1,0 +1,12 @@
+.fade-menu
+  position: fixed, 0px 0px 0px 0px
+  @include transition
+  background: black
+  opacity: 0
+  visibility: hidden
+  z-index: 999997
+
+  &.is-visible
+    opacity: 0.4
+    visibility: visible
+

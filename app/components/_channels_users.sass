@@ -1,0 +1,44 @@
+.channels, .users
+  @include display(flex)
+  @include flex-direction(row)
+  @include flex-wrap(wrap)
+  @include flex-grow(1)
+  @include flex-basis(200px)
+  @include align-content(stretch)
+  @include justify-content(stretch)
+  @include align-items(stretch)
+  height: 100vh
+
+  $base-accent-color: #477DCA !default
+
+  $channel-colors: desaturate($base-accent-color, 30%), #F7C808, #3581A5, #5FBEBE, #98C79A, #D2315D, #A7A891, #389090, #F47E7D, #B5D045, #FB8335, #81C0C5, #E98813, #22B5BF, #8767A6, #88C134
+  //#E0C7A8,#BDCC97,#979EA0,
+
+  @include clearfix
+
+  .hided
+    color: transparent
+
+  .channel, .user
+    @include display(flex)
+    @include flex-grow(1)
+    @include align-items(center)
+    @include justify-content(center)
+    @include transition (all 0.2s ease-in-out)
+    //border-radius: 50%
+    cursor: pointer
+    overflow: hidden
+    //@include ellipsis()
+    white-space: nowrap
+
+    @for $i from 1  to 200//through 51 //length($grid-item-colors)
+      &:nth-child(#{$i})
+        $background-from-list: nth($channel-colors, $i % 16 + 1)
+        $background-color: transparentize($background-from-list, 0.8)
+        background-color: $background-color
+
+        &:focus, &:hover
+          background-color: transparentize($background-from-list, 0.4)
+          min-width: 150px
+          color: black
+

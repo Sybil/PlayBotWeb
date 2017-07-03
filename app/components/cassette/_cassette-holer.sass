@@ -1,0 +1,39 @@
+.cassette-holder
+
+  /* Tape elements */
+  .tape
+    width: 586px
+    height: 379px
+    margin: auto //30px auto 0
+    position: relative
+    @include transition(all .4s ease-in-out)
+    //INFO
+    overflow: hidden
+    &:hover
+      .cassette-back, .cassette-front
+        @include filter(blur(3px) grayscale(90%))
+        @include transition(all, 0.5s ease-in-out)
+        //opacity: 0.9
+      .info-hover
+        @include transform(translate(0, -200%))
+
+    .info-hover
+      padding: 1em 2em
+      @include transition(all, 0.5s ease-in-out)
+      background: transparentize(#000, 0.7)
+      height: inherit
+      width: inherit
+      overflow: hidden
+      color: rgba(255, 255, 255, 0.7)
+
+  .vc-loader
+    position: absolute
+    width: 31px
+    height: 31px
+    bottom: 50px
+    left: 50%
+    margin: -15px 0 0 -15px
+    background: transparent url(images/cassette/ajax-loader.gif) no-repeat center center
+    display: none
+
+

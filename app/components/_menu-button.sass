@@ -1,0 +1,26 @@
+.menu-button
+  $hover_color: lighten($standard_secondary_color, 10%)
+
+  width: 36px//60px
+  height: 36px//60px
+  outline: none
+  position: fixed
+  margin: 5px
+  padding: 0px //8px 9px 9px 9px //14px 15px 15px 15px
+  z-index: 999996
+  border: 2px solid $standard_secondary_color
+  border-radius: 50%
+  box-sizing: content-box
+  background: none //rgba(255,255,255,0.5)
+
+  &:hover, &:focus
+    border: 3px solid $hover_color
+    margin: 4px
+    i
+      color: $hover_color
+
+    //@include transition(all 0.1s ease)
+  i
+    font-size: 21px //30px
+    color: $standard_secondary_color
+

@@ -1,0 +1,60 @@
+.filters-menu
+  flex-grow: 0
+  flex-shrink: 0
+  //$filter_color: #474747
+  background-color: $standard_color//$filter_color
+  color: $standard_font_color
+  white-space: nowrap
+
+  li
+    height: 50px //70px
+
+  select
+    background: $standard_color//$filter_color
+    border: none
+    outline: none
+    cursor: pointer
+    color: $standard_font_color
+    @include span-columns(2 of 4)
+    height: 25px //35px
+    //@include appearance(none)
+    option
+      width: 100px
+      color: $standard_font_color
+    &:hover, &:focus
+      color: $standard_secondary_color
+
+  input
+    @include span-columns(2 of 4)
+    height: 25px //35px
+    background: $standard_color //$filter_color
+    border: none
+    outline: none
+    color: $standard_font_color
+    &:hover, &:focus
+      color: $standard_secondary_color
+      @include placeholder
+        color: $standard_secondary_color
+
+  ul
+    display: inline-block
+    li
+      @include span-columns(4)
+      height: 25px //35px
+    .first-line
+      position: relative
+      top: -25px//-35px
+    .second-line
+      position: relative
+      left: -50%
+
+  .design
+    font-size: 2em
+    line-height: 50px //70px
+    float: right
+    padding: 0 10px
+    cursor: pointer
+    vertical-align: middle
+    &:hover, &.active
+      color: #2098d1
+

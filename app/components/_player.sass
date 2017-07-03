@@ -1,0 +1,43 @@
+@mixin grid-item-columns($columns)
+  width: (100% / 12) * $columns
+
+.player
+  @include flex-grow(0)
+  @include flex-shrink(0)
+  background-color: #474747 //$standard_color
+  ul
+    @include clearfix
+    @include row(table)
+
+    li
+      @include span-columns(1)
+      color: $standard_font_color
+      white-space: nowrap
+      overflow: hidden
+      vertical-align: middle
+
+    li.track_name
+      @include span-columns(6)
+      overflow: hidden
+      text-overflow: ellipsis
+      padding-left: 50px
+
+      //div
+        &:focus, &:hover
+          @include animation(scroll 5s ease infinite)
+
+          //@include keyframes(scroll)
+            from
+              @include transform(translateX(0%))
+            to
+              @include transform(translateX(-100%))
+
+    li.track_player
+      @include span-columns(6)
+
+      //width: 640px
+      line-height: 0px
+      height: 35px
+      iframe
+        display: inline-block
+
