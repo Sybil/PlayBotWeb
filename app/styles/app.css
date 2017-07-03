@@ -1,0 +1,2222 @@
+@charset "UTF-8";
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+/* Trim */
+.hvr-trim, .tracks-colorGrid .grid-item {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative; }
+  .hvr-trim:before, .tracks-colorGrid .grid-item:before {
+    content: "";
+    position: absolute;
+    border: white solid 4px;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    opacity: 0;
+    transition: opacity 0.3s; }
+  .hvr-trim:hover:before, .tracks-colorGrid .grid-item:hover:before, .hvr-trim:focus:before, .tracks-colorGrid .grid-item:focus:before, .hvr-trim:active:before, .tracks-colorGrid .grid-item:active:before, .hvr-trim.active:before, .tracks-colorGrid .active.grid-item:before {
+    opacity: 1; }
+
+.flex-boxes {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-align: center; }
+  .flex-boxes .flex-box {
+    transition: all 0.2s ease-in-out;
+    flex: 1 0 30em;
+    background: #f7f7f7;
+    border-radius: 3px;
+    box-shadow: inset 0 0 1px #DDD, 0 2px 4px #e6e6e6;
+    margin: 5px;
+    padding: 2em 2em 3em 2em; }
+    .flex-boxes .flex-box:nth-child(1) {
+      border-top: 6px solid tomato; }
+      .flex-boxes .flex-box:nth-child(1):focus, .flex-boxes .flex-box:nth-child(1):hover {
+        background-color: rgba(255, 99, 71, 0.1); }
+    .flex-boxes .flex-box:nth-child(2) {
+      border-top: 6px solid #72BFBF; }
+      .flex-boxes .flex-box:nth-child(2):focus, .flex-boxes .flex-box:nth-child(2):hover {
+        background-color: rgba(114, 191, 191, 0.1); }
+    .flex-boxes .flex-box:nth-child(3) {
+      border-top: 6px solid #92B1E3; }
+      .flex-boxes .flex-box:nth-child(3):focus, .flex-boxes .flex-box:nth-child(3):hover {
+        background-color: rgba(146, 177, 227, 0.1); }
+    .flex-boxes .flex-box:nth-child(4) {
+      border-top: 6px solid #E3D743; }
+      .flex-boxes .flex-box:nth-child(4):focus, .flex-boxes .flex-box:nth-child(4):hover {
+        background-color: rgba(227, 215, 67, 0.1); }
+    .flex-boxes .flex-box:nth-child(5) {
+      border-top: 6px solid #CCC; }
+      .flex-boxes .flex-box:nth-child(5):focus, .flex-boxes .flex-box:nth-child(5):hover {
+        background-color: rgba(204, 204, 204, 0.1); }
+    .flex-boxes .flex-box:nth-child(6) {
+      border-top: 6px solid #F6C05C; }
+      .flex-boxes .flex-box:nth-child(6):focus, .flex-boxes .flex-box:nth-child(6):hover {
+        background-color: rgba(246, 192, 92, 0.1); }
+    .flex-boxes .flex-box img, .flex-boxes .flex-box .icon {
+      color: rgba(51, 51, 51, 0.7);
+      font-size: 4em;
+      opacity: 0.4; }
+    .flex-boxes .flex-box .flex-title {
+      color: rgba(51, 51, 51, 0.7);
+      font-size: 1.2em;
+      font-weight: 800;
+      margin-bottom: 0.5em; }
+    .flex-boxes .flex-box p {
+      color: rgba(51, 51, 51, 0.6);
+      line-height: 1.3em;
+      margin: auto;
+      text-align: justify; }
+  .flex-boxes .flex-box.flex-box-big {
+    flex: 2 0 40em; }
+
+.fade-menu {
+  position: fixed, 0px 0px 0px 0px;
+  -webkit-transition: all 0.15s ease-out 0s;
+  -moz-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s;
+  background: black;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999997; }
+  .fade-menu.is-visible {
+    opacity: 0.4;
+    visibility: visible; }
+
+.menu {
+  position: fixed;
+  -webkit-transform: translateY(-60px);
+  -moz-transform: translateY(-60px);
+  -ms-transform: translateY(-60px);
+  -o-transform: translateY(-60px);
+  transform: translateY(-60px);
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+  background: #333;
+  z-index: 999998;
+  width: 100%; }
+  .menu li a {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 10.43705%;
+    height: 50px;
+    border-right: 1px solid #2e2e2e;
+    color: #fff;
+    display: block;
+    font-size: 1.1em;
+    padding: 1em;
+    text-decoration: none;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 600; }
+    .menu li a:last-child {
+      margin-right: 0; }
+    @media screen and (max-device-width: 640px), screen and (max-width: 800px) {
+      .menu li a {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 19.81984%; }
+        .menu li a:last-child {
+          margin-right: 0; } }
+    .menu li a:focus, .menu li a.active {
+      background-color: #474747; }
+    .menu li a:hover {
+      background-color: #477DCA;
+      color: #fff; }
+  .menu.is-visible {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0); }
+
+.player {
+  -webkit-flex-grow: 0;
+  -moz-flex-grow: 0;
+  flex-grow: 0;
+  -ms-flex-positive: 0;
+  -webkit-flex-shrink: 0;
+  -moz-flex-shrink: 0;
+  flex-shrink: 0;
+  -ms-flex-negative: 0;
+  background-color: #474747; }
+  .player ul {
+    display: table;
+    width: 100%;
+    table-layout: fixed; }
+    .player ul::after {
+      clear: both;
+      content: "";
+      display: block; }
+    .player ul li {
+      display: table-cell;
+      width: 8.33333%;
+      color: rgba(255, 255, 255, 0.7);
+      white-space: nowrap;
+      overflow: hidden;
+      vertical-align: middle; }
+    .player ul li.track_name {
+      display: table-cell;
+      width: 50%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-left: 50px; }
+    .player ul li.track_player {
+      display: table-cell;
+      width: 50%;
+      line-height: 0px;
+      height: 35px; }
+      .player ul li.track_player iframe {
+        display: inline-block; }
+
+.presentation {
+  height: 100vh;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  flex-grow: 1;
+  -ms-flex-positive: 1;
+  -webkit-flex-basis: 200px;
+  -moz-flex-basis: 200px;
+  flex-basis: 200px;
+  -ms-flex-preferred-size: 200px;
+  background: black url(/assets/images/vinyl_prog_2.jpg);
+  background-size: cover;
+  background-position: bottom; }
+  .presentation .abstract {
+    color: white;
+    margin: auto;
+    text-align: center; }
+    .presentation .abstract a {
+      font-family: wire;
+      -webkit-filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.9));
+      filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.9));
+      font-size: 7em;
+      font-weight: bold;
+      color: #2098d1; }
+    .presentation .abstract img {
+      height: 30vh;
+      margin-bottom: 1em; }
+    .presentation .abstract p {
+      text-align: center;
+      font-size: 1.6em;
+      color: white;
+      margin-bottom: 0.5em; }
+
+.tracks-table {
+  width: 100%;
+  margin-right: calc(100% - 100vw);
+  border-collapse: collapse;
+  border-spacing: 0; }
+  .tracks-table td {
+    line-height: 1.5em; }
+  .tracks-table tbody tr.active > td.track_name {
+    font-weight: 600; }
+  .tracks-table tbody tr:hover > td, .tracks-table tbody tr.active > td {
+    background-color: #f7f7f7;
+    color: #2098d1; }
+  .tracks-table tbody td {
+    border-bottom: 0px;
+    border-top: 1px solid gainsboro;
+    padding: 0.8em 1em;
+    overflow: hidden; }
+  .tracks-table tbody td.track_author {
+    display: table-cell;
+    width: 16.66667%; }
+  .tracks-table tbody td.track_name {
+    display: table-cell;
+    width: 50%; }
+  .tracks-table tbody td.track_tags {
+    display: table-cell;
+    width: 16.66667%; }
+  .tracks-table tbody td.track_channel {
+    display: table-cell;
+    width: 16.66667%; }
+  .tracks-table tbody td a {
+    color: gray; }
+
+.channels, .users {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  flex-grow: 1;
+  -ms-flex-positive: 1;
+  -webkit-flex-basis: 200px;
+  -moz-flex-basis: 200px;
+  flex-basis: 200px;
+  -ms-flex-preferred-size: 200px;
+  -webkit-align-content: stretch;
+  -moz-align-content: stretch;
+  align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  -webkit-box-pack: stretch;
+  -moz-box-pack: stretch;
+  box-pack: stretch;
+  -webkit-justify-content: stretch;
+  -moz-justify-content: stretch;
+  -ms-justify-content: stretch;
+  -o-justify-content: stretch;
+  justify-content: stretch;
+  -ms-flex-pack: stretch;
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  box-align: stretch;
+  -webkit-align-items: stretch;
+  -moz-align-items: stretch;
+  -ms-align-items: stretch;
+  -o-align-items: stretch;
+  align-items: stretch;
+  -ms-flex-align: stretch;
+  height: 100vh; }
+  .channels::after, .users::after {
+    clear: both;
+    content: "";
+    display: block; }
+  .channels .hided, .users .hided {
+    color: transparent; }
+  .channels .channel, .channels .user, .users .channel, .users .user {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
+    flex-grow: 1;
+    -ms-flex-positive: 1;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap; }
+    .channels .channel:nth-child(1), .channels .user:nth-child(1), .users .channel:nth-child(1), .users .user:nth-child(1) {
+      background-color: rgba(247, 200, 8, 0.2); }
+      .channels .channel:nth-child(1):focus, .channels .channel:nth-child(1):hover, .channels .user:nth-child(1):focus, .channels .user:nth-child(1):hover, .users .channel:nth-child(1):focus, .users .channel:nth-child(1):hover, .users .user:nth-child(1):focus, .users .user:nth-child(1):hover {
+        background-color: rgba(247, 200, 8, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(2), .channels .user:nth-child(2), .users .channel:nth-child(2), .users .user:nth-child(2) {
+      background-color: rgba(53, 129, 165, 0.2); }
+      .channels .channel:nth-child(2):focus, .channels .channel:nth-child(2):hover, .channels .user:nth-child(2):focus, .channels .user:nth-child(2):hover, .users .channel:nth-child(2):focus, .users .channel:nth-child(2):hover, .users .user:nth-child(2):focus, .users .user:nth-child(2):hover {
+        background-color: rgba(53, 129, 165, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(3), .channels .user:nth-child(3), .users .channel:nth-child(3), .users .user:nth-child(3) {
+      background-color: rgba(95, 190, 190, 0.2); }
+      .channels .channel:nth-child(3):focus, .channels .channel:nth-child(3):hover, .channels .user:nth-child(3):focus, .channels .user:nth-child(3):hover, .users .channel:nth-child(3):focus, .users .channel:nth-child(3):hover, .users .user:nth-child(3):focus, .users .user:nth-child(3):hover {
+        background-color: rgba(95, 190, 190, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(4), .channels .user:nth-child(4), .users .channel:nth-child(4), .users .user:nth-child(4) {
+      background-color: rgba(152, 199, 154, 0.2); }
+      .channels .channel:nth-child(4):focus, .channels .channel:nth-child(4):hover, .channels .user:nth-child(4):focus, .channels .user:nth-child(4):hover, .users .channel:nth-child(4):focus, .users .channel:nth-child(4):hover, .users .user:nth-child(4):focus, .users .user:nth-child(4):hover {
+        background-color: rgba(152, 199, 154, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(5), .channels .user:nth-child(5), .users .channel:nth-child(5), .users .user:nth-child(5) {
+      background-color: rgba(210, 49, 93, 0.2); }
+      .channels .channel:nth-child(5):focus, .channels .channel:nth-child(5):hover, .channels .user:nth-child(5):focus, .channels .user:nth-child(5):hover, .users .channel:nth-child(5):focus, .users .channel:nth-child(5):hover, .users .user:nth-child(5):focus, .users .user:nth-child(5):hover {
+        background-color: rgba(210, 49, 93, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(6), .channels .user:nth-child(6), .users .channel:nth-child(6), .users .user:nth-child(6) {
+      background-color: rgba(167, 168, 145, 0.2); }
+      .channels .channel:nth-child(6):focus, .channels .channel:nth-child(6):hover, .channels .user:nth-child(6):focus, .channels .user:nth-child(6):hover, .users .channel:nth-child(6):focus, .users .channel:nth-child(6):hover, .users .user:nth-child(6):focus, .users .user:nth-child(6):hover {
+        background-color: rgba(167, 168, 145, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(7), .channels .user:nth-child(7), .users .channel:nth-child(7), .users .user:nth-child(7) {
+      background-color: rgba(56, 144, 144, 0.2); }
+      .channels .channel:nth-child(7):focus, .channels .channel:nth-child(7):hover, .channels .user:nth-child(7):focus, .channels .user:nth-child(7):hover, .users .channel:nth-child(7):focus, .users .channel:nth-child(7):hover, .users .user:nth-child(7):focus, .users .user:nth-child(7):hover {
+        background-color: rgba(56, 144, 144, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(8), .channels .user:nth-child(8), .users .channel:nth-child(8), .users .user:nth-child(8) {
+      background-color: rgba(244, 126, 125, 0.2); }
+      .channels .channel:nth-child(8):focus, .channels .channel:nth-child(8):hover, .channels .user:nth-child(8):focus, .channels .user:nth-child(8):hover, .users .channel:nth-child(8):focus, .users .channel:nth-child(8):hover, .users .user:nth-child(8):focus, .users .user:nth-child(8):hover {
+        background-color: rgba(244, 126, 125, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(9), .channels .user:nth-child(9), .users .channel:nth-child(9), .users .user:nth-child(9) {
+      background-color: rgba(181, 208, 69, 0.2); }
+      .channels .channel:nth-child(9):focus, .channels .channel:nth-child(9):hover, .channels .user:nth-child(9):focus, .channels .user:nth-child(9):hover, .users .channel:nth-child(9):focus, .users .channel:nth-child(9):hover, .users .user:nth-child(9):focus, .users .user:nth-child(9):hover {
+        background-color: rgba(181, 208, 69, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(10), .channels .user:nth-child(10), .users .channel:nth-child(10), .users .user:nth-child(10) {
+      background-color: rgba(251, 131, 53, 0.2); }
+      .channels .channel:nth-child(10):focus, .channels .channel:nth-child(10):hover, .channels .user:nth-child(10):focus, .channels .user:nth-child(10):hover, .users .channel:nth-child(10):focus, .users .channel:nth-child(10):hover, .users .user:nth-child(10):focus, .users .user:nth-child(10):hover {
+        background-color: rgba(251, 131, 53, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(11), .channels .user:nth-child(11), .users .channel:nth-child(11), .users .user:nth-child(11) {
+      background-color: rgba(129, 192, 197, 0.2); }
+      .channels .channel:nth-child(11):focus, .channels .channel:nth-child(11):hover, .channels .user:nth-child(11):focus, .channels .user:nth-child(11):hover, .users .channel:nth-child(11):focus, .users .channel:nth-child(11):hover, .users .user:nth-child(11):focus, .users .user:nth-child(11):hover {
+        background-color: rgba(129, 192, 197, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(12), .channels .user:nth-child(12), .users .channel:nth-child(12), .users .user:nth-child(12) {
+      background-color: rgba(233, 136, 19, 0.2); }
+      .channels .channel:nth-child(12):focus, .channels .channel:nth-child(12):hover, .channels .user:nth-child(12):focus, .channels .user:nth-child(12):hover, .users .channel:nth-child(12):focus, .users .channel:nth-child(12):hover, .users .user:nth-child(12):focus, .users .user:nth-child(12):hover {
+        background-color: rgba(233, 136, 19, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(13), .channels .user:nth-child(13), .users .channel:nth-child(13), .users .user:nth-child(13) {
+      background-color: rgba(34, 181, 191, 0.2); }
+      .channels .channel:nth-child(13):focus, .channels .channel:nth-child(13):hover, .channels .user:nth-child(13):focus, .channels .user:nth-child(13):hover, .users .channel:nth-child(13):focus, .users .channel:nth-child(13):hover, .users .user:nth-child(13):focus, .users .user:nth-child(13):hover {
+        background-color: rgba(34, 181, 191, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(14), .channels .user:nth-child(14), .users .channel:nth-child(14), .users .user:nth-child(14) {
+      background-color: rgba(135, 103, 166, 0.2); }
+      .channels .channel:nth-child(14):focus, .channels .channel:nth-child(14):hover, .channels .user:nth-child(14):focus, .channels .user:nth-child(14):hover, .users .channel:nth-child(14):focus, .users .channel:nth-child(14):hover, .users .user:nth-child(14):focus, .users .user:nth-child(14):hover {
+        background-color: rgba(135, 103, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(15), .channels .user:nth-child(15), .users .channel:nth-child(15), .users .user:nth-child(15) {
+      background-color: rgba(136, 193, 52, 0.2); }
+      .channels .channel:nth-child(15):focus, .channels .channel:nth-child(15):hover, .channels .user:nth-child(15):focus, .channels .user:nth-child(15):hover, .users .channel:nth-child(15):focus, .users .channel:nth-child(15):hover, .users .user:nth-child(15):focus, .users .user:nth-child(15):hover {
+        background-color: rgba(136, 193, 52, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(16), .channels .user:nth-child(16), .users .channel:nth-child(16), .users .user:nth-child(16) {
+      background-color: rgba(107, 131, 166, 0.2); }
+      .channels .channel:nth-child(16):focus, .channels .channel:nth-child(16):hover, .channels .user:nth-child(16):focus, .channels .user:nth-child(16):hover, .users .channel:nth-child(16):focus, .users .channel:nth-child(16):hover, .users .user:nth-child(16):focus, .users .user:nth-child(16):hover {
+        background-color: rgba(107, 131, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(17), .channels .user:nth-child(17), .users .channel:nth-child(17), .users .user:nth-child(17) {
+      background-color: rgba(247, 200, 8, 0.2); }
+      .channels .channel:nth-child(17):focus, .channels .channel:nth-child(17):hover, .channels .user:nth-child(17):focus, .channels .user:nth-child(17):hover, .users .channel:nth-child(17):focus, .users .channel:nth-child(17):hover, .users .user:nth-child(17):focus, .users .user:nth-child(17):hover {
+        background-color: rgba(247, 200, 8, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(18), .channels .user:nth-child(18), .users .channel:nth-child(18), .users .user:nth-child(18) {
+      background-color: rgba(53, 129, 165, 0.2); }
+      .channels .channel:nth-child(18):focus, .channels .channel:nth-child(18):hover, .channels .user:nth-child(18):focus, .channels .user:nth-child(18):hover, .users .channel:nth-child(18):focus, .users .channel:nth-child(18):hover, .users .user:nth-child(18):focus, .users .user:nth-child(18):hover {
+        background-color: rgba(53, 129, 165, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(19), .channels .user:nth-child(19), .users .channel:nth-child(19), .users .user:nth-child(19) {
+      background-color: rgba(95, 190, 190, 0.2); }
+      .channels .channel:nth-child(19):focus, .channels .channel:nth-child(19):hover, .channels .user:nth-child(19):focus, .channels .user:nth-child(19):hover, .users .channel:nth-child(19):focus, .users .channel:nth-child(19):hover, .users .user:nth-child(19):focus, .users .user:nth-child(19):hover {
+        background-color: rgba(95, 190, 190, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(20), .channels .user:nth-child(20), .users .channel:nth-child(20), .users .user:nth-child(20) {
+      background-color: rgba(152, 199, 154, 0.2); }
+      .channels .channel:nth-child(20):focus, .channels .channel:nth-child(20):hover, .channels .user:nth-child(20):focus, .channels .user:nth-child(20):hover, .users .channel:nth-child(20):focus, .users .channel:nth-child(20):hover, .users .user:nth-child(20):focus, .users .user:nth-child(20):hover {
+        background-color: rgba(152, 199, 154, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(21), .channels .user:nth-child(21), .users .channel:nth-child(21), .users .user:nth-child(21) {
+      background-color: rgba(210, 49, 93, 0.2); }
+      .channels .channel:nth-child(21):focus, .channels .channel:nth-child(21):hover, .channels .user:nth-child(21):focus, .channels .user:nth-child(21):hover, .users .channel:nth-child(21):focus, .users .channel:nth-child(21):hover, .users .user:nth-child(21):focus, .users .user:nth-child(21):hover {
+        background-color: rgba(210, 49, 93, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(22), .channels .user:nth-child(22), .users .channel:nth-child(22), .users .user:nth-child(22) {
+      background-color: rgba(167, 168, 145, 0.2); }
+      .channels .channel:nth-child(22):focus, .channels .channel:nth-child(22):hover, .channels .user:nth-child(22):focus, .channels .user:nth-child(22):hover, .users .channel:nth-child(22):focus, .users .channel:nth-child(22):hover, .users .user:nth-child(22):focus, .users .user:nth-child(22):hover {
+        background-color: rgba(167, 168, 145, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(23), .channels .user:nth-child(23), .users .channel:nth-child(23), .users .user:nth-child(23) {
+      background-color: rgba(56, 144, 144, 0.2); }
+      .channels .channel:nth-child(23):focus, .channels .channel:nth-child(23):hover, .channels .user:nth-child(23):focus, .channels .user:nth-child(23):hover, .users .channel:nth-child(23):focus, .users .channel:nth-child(23):hover, .users .user:nth-child(23):focus, .users .user:nth-child(23):hover {
+        background-color: rgba(56, 144, 144, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(24), .channels .user:nth-child(24), .users .channel:nth-child(24), .users .user:nth-child(24) {
+      background-color: rgba(244, 126, 125, 0.2); }
+      .channels .channel:nth-child(24):focus, .channels .channel:nth-child(24):hover, .channels .user:nth-child(24):focus, .channels .user:nth-child(24):hover, .users .channel:nth-child(24):focus, .users .channel:nth-child(24):hover, .users .user:nth-child(24):focus, .users .user:nth-child(24):hover {
+        background-color: rgba(244, 126, 125, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(25), .channels .user:nth-child(25), .users .channel:nth-child(25), .users .user:nth-child(25) {
+      background-color: rgba(181, 208, 69, 0.2); }
+      .channels .channel:nth-child(25):focus, .channels .channel:nth-child(25):hover, .channels .user:nth-child(25):focus, .channels .user:nth-child(25):hover, .users .channel:nth-child(25):focus, .users .channel:nth-child(25):hover, .users .user:nth-child(25):focus, .users .user:nth-child(25):hover {
+        background-color: rgba(181, 208, 69, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(26), .channels .user:nth-child(26), .users .channel:nth-child(26), .users .user:nth-child(26) {
+      background-color: rgba(251, 131, 53, 0.2); }
+      .channels .channel:nth-child(26):focus, .channels .channel:nth-child(26):hover, .channels .user:nth-child(26):focus, .channels .user:nth-child(26):hover, .users .channel:nth-child(26):focus, .users .channel:nth-child(26):hover, .users .user:nth-child(26):focus, .users .user:nth-child(26):hover {
+        background-color: rgba(251, 131, 53, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(27), .channels .user:nth-child(27), .users .channel:nth-child(27), .users .user:nth-child(27) {
+      background-color: rgba(129, 192, 197, 0.2); }
+      .channels .channel:nth-child(27):focus, .channels .channel:nth-child(27):hover, .channels .user:nth-child(27):focus, .channels .user:nth-child(27):hover, .users .channel:nth-child(27):focus, .users .channel:nth-child(27):hover, .users .user:nth-child(27):focus, .users .user:nth-child(27):hover {
+        background-color: rgba(129, 192, 197, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(28), .channels .user:nth-child(28), .users .channel:nth-child(28), .users .user:nth-child(28) {
+      background-color: rgba(233, 136, 19, 0.2); }
+      .channels .channel:nth-child(28):focus, .channels .channel:nth-child(28):hover, .channels .user:nth-child(28):focus, .channels .user:nth-child(28):hover, .users .channel:nth-child(28):focus, .users .channel:nth-child(28):hover, .users .user:nth-child(28):focus, .users .user:nth-child(28):hover {
+        background-color: rgba(233, 136, 19, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(29), .channels .user:nth-child(29), .users .channel:nth-child(29), .users .user:nth-child(29) {
+      background-color: rgba(34, 181, 191, 0.2); }
+      .channels .channel:nth-child(29):focus, .channels .channel:nth-child(29):hover, .channels .user:nth-child(29):focus, .channels .user:nth-child(29):hover, .users .channel:nth-child(29):focus, .users .channel:nth-child(29):hover, .users .user:nth-child(29):focus, .users .user:nth-child(29):hover {
+        background-color: rgba(34, 181, 191, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(30), .channels .user:nth-child(30), .users .channel:nth-child(30), .users .user:nth-child(30) {
+      background-color: rgba(135, 103, 166, 0.2); }
+      .channels .channel:nth-child(30):focus, .channels .channel:nth-child(30):hover, .channels .user:nth-child(30):focus, .channels .user:nth-child(30):hover, .users .channel:nth-child(30):focus, .users .channel:nth-child(30):hover, .users .user:nth-child(30):focus, .users .user:nth-child(30):hover {
+        background-color: rgba(135, 103, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(31), .channels .user:nth-child(31), .users .channel:nth-child(31), .users .user:nth-child(31) {
+      background-color: rgba(136, 193, 52, 0.2); }
+      .channels .channel:nth-child(31):focus, .channels .channel:nth-child(31):hover, .channels .user:nth-child(31):focus, .channels .user:nth-child(31):hover, .users .channel:nth-child(31):focus, .users .channel:nth-child(31):hover, .users .user:nth-child(31):focus, .users .user:nth-child(31):hover {
+        background-color: rgba(136, 193, 52, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(32), .channels .user:nth-child(32), .users .channel:nth-child(32), .users .user:nth-child(32) {
+      background-color: rgba(107, 131, 166, 0.2); }
+      .channels .channel:nth-child(32):focus, .channels .channel:nth-child(32):hover, .channels .user:nth-child(32):focus, .channels .user:nth-child(32):hover, .users .channel:nth-child(32):focus, .users .channel:nth-child(32):hover, .users .user:nth-child(32):focus, .users .user:nth-child(32):hover {
+        background-color: rgba(107, 131, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(33), .channels .user:nth-child(33), .users .channel:nth-child(33), .users .user:nth-child(33) {
+      background-color: rgba(247, 200, 8, 0.2); }
+      .channels .channel:nth-child(33):focus, .channels .channel:nth-child(33):hover, .channels .user:nth-child(33):focus, .channels .user:nth-child(33):hover, .users .channel:nth-child(33):focus, .users .channel:nth-child(33):hover, .users .user:nth-child(33):focus, .users .user:nth-child(33):hover {
+        background-color: rgba(247, 200, 8, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(34), .channels .user:nth-child(34), .users .channel:nth-child(34), .users .user:nth-child(34) {
+      background-color: rgba(53, 129, 165, 0.2); }
+      .channels .channel:nth-child(34):focus, .channels .channel:nth-child(34):hover, .channels .user:nth-child(34):focus, .channels .user:nth-child(34):hover, .users .channel:nth-child(34):focus, .users .channel:nth-child(34):hover, .users .user:nth-child(34):focus, .users .user:nth-child(34):hover {
+        background-color: rgba(53, 129, 165, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(35), .channels .user:nth-child(35), .users .channel:nth-child(35), .users .user:nth-child(35) {
+      background-color: rgba(95, 190, 190, 0.2); }
+      .channels .channel:nth-child(35):focus, .channels .channel:nth-child(35):hover, .channels .user:nth-child(35):focus, .channels .user:nth-child(35):hover, .users .channel:nth-child(35):focus, .users .channel:nth-child(35):hover, .users .user:nth-child(35):focus, .users .user:nth-child(35):hover {
+        background-color: rgba(95, 190, 190, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(36), .channels .user:nth-child(36), .users .channel:nth-child(36), .users .user:nth-child(36) {
+      background-color: rgba(152, 199, 154, 0.2); }
+      .channels .channel:nth-child(36):focus, .channels .channel:nth-child(36):hover, .channels .user:nth-child(36):focus, .channels .user:nth-child(36):hover, .users .channel:nth-child(36):focus, .users .channel:nth-child(36):hover, .users .user:nth-child(36):focus, .users .user:nth-child(36):hover {
+        background-color: rgba(152, 199, 154, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(37), .channels .user:nth-child(37), .users .channel:nth-child(37), .users .user:nth-child(37) {
+      background-color: rgba(210, 49, 93, 0.2); }
+      .channels .channel:nth-child(37):focus, .channels .channel:nth-child(37):hover, .channels .user:nth-child(37):focus, .channels .user:nth-child(37):hover, .users .channel:nth-child(37):focus, .users .channel:nth-child(37):hover, .users .user:nth-child(37):focus, .users .user:nth-child(37):hover {
+        background-color: rgba(210, 49, 93, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(38), .channels .user:nth-child(38), .users .channel:nth-child(38), .users .user:nth-child(38) {
+      background-color: rgba(167, 168, 145, 0.2); }
+      .channels .channel:nth-child(38):focus, .channels .channel:nth-child(38):hover, .channels .user:nth-child(38):focus, .channels .user:nth-child(38):hover, .users .channel:nth-child(38):focus, .users .channel:nth-child(38):hover, .users .user:nth-child(38):focus, .users .user:nth-child(38):hover {
+        background-color: rgba(167, 168, 145, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(39), .channels .user:nth-child(39), .users .channel:nth-child(39), .users .user:nth-child(39) {
+      background-color: rgba(56, 144, 144, 0.2); }
+      .channels .channel:nth-child(39):focus, .channels .channel:nth-child(39):hover, .channels .user:nth-child(39):focus, .channels .user:nth-child(39):hover, .users .channel:nth-child(39):focus, .users .channel:nth-child(39):hover, .users .user:nth-child(39):focus, .users .user:nth-child(39):hover {
+        background-color: rgba(56, 144, 144, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(40), .channels .user:nth-child(40), .users .channel:nth-child(40), .users .user:nth-child(40) {
+      background-color: rgba(244, 126, 125, 0.2); }
+      .channels .channel:nth-child(40):focus, .channels .channel:nth-child(40):hover, .channels .user:nth-child(40):focus, .channels .user:nth-child(40):hover, .users .channel:nth-child(40):focus, .users .channel:nth-child(40):hover, .users .user:nth-child(40):focus, .users .user:nth-child(40):hover {
+        background-color: rgba(244, 126, 125, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(41), .channels .user:nth-child(41), .users .channel:nth-child(41), .users .user:nth-child(41) {
+      background-color: rgba(181, 208, 69, 0.2); }
+      .channels .channel:nth-child(41):focus, .channels .channel:nth-child(41):hover, .channels .user:nth-child(41):focus, .channels .user:nth-child(41):hover, .users .channel:nth-child(41):focus, .users .channel:nth-child(41):hover, .users .user:nth-child(41):focus, .users .user:nth-child(41):hover {
+        background-color: rgba(181, 208, 69, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(42), .channels .user:nth-child(42), .users .channel:nth-child(42), .users .user:nth-child(42) {
+      background-color: rgba(251, 131, 53, 0.2); }
+      .channels .channel:nth-child(42):focus, .channels .channel:nth-child(42):hover, .channels .user:nth-child(42):focus, .channels .user:nth-child(42):hover, .users .channel:nth-child(42):focus, .users .channel:nth-child(42):hover, .users .user:nth-child(42):focus, .users .user:nth-child(42):hover {
+        background-color: rgba(251, 131, 53, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(43), .channels .user:nth-child(43), .users .channel:nth-child(43), .users .user:nth-child(43) {
+      background-color: rgba(129, 192, 197, 0.2); }
+      .channels .channel:nth-child(43):focus, .channels .channel:nth-child(43):hover, .channels .user:nth-child(43):focus, .channels .user:nth-child(43):hover, .users .channel:nth-child(43):focus, .users .channel:nth-child(43):hover, .users .user:nth-child(43):focus, .users .user:nth-child(43):hover {
+        background-color: rgba(129, 192, 197, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(44), .channels .user:nth-child(44), .users .channel:nth-child(44), .users .user:nth-child(44) {
+      background-color: rgba(233, 136, 19, 0.2); }
+      .channels .channel:nth-child(44):focus, .channels .channel:nth-child(44):hover, .channels .user:nth-child(44):focus, .channels .user:nth-child(44):hover, .users .channel:nth-child(44):focus, .users .channel:nth-child(44):hover, .users .user:nth-child(44):focus, .users .user:nth-child(44):hover {
+        background-color: rgba(233, 136, 19, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(45), .channels .user:nth-child(45), .users .channel:nth-child(45), .users .user:nth-child(45) {
+      background-color: rgba(34, 181, 191, 0.2); }
+      .channels .channel:nth-child(45):focus, .channels .channel:nth-child(45):hover, .channels .user:nth-child(45):focus, .channels .user:nth-child(45):hover, .users .channel:nth-child(45):focus, .users .channel:nth-child(45):hover, .users .user:nth-child(45):focus, .users .user:nth-child(45):hover {
+        background-color: rgba(34, 181, 191, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(46), .channels .user:nth-child(46), .users .channel:nth-child(46), .users .user:nth-child(46) {
+      background-color: rgba(135, 103, 166, 0.2); }
+      .channels .channel:nth-child(46):focus, .channels .channel:nth-child(46):hover, .channels .user:nth-child(46):focus, .channels .user:nth-child(46):hover, .users .channel:nth-child(46):focus, .users .channel:nth-child(46):hover, .users .user:nth-child(46):focus, .users .user:nth-child(46):hover {
+        background-color: rgba(135, 103, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(47), .channels .user:nth-child(47), .users .channel:nth-child(47), .users .user:nth-child(47) {
+      background-color: rgba(136, 193, 52, 0.2); }
+      .channels .channel:nth-child(47):focus, .channels .channel:nth-child(47):hover, .channels .user:nth-child(47):focus, .channels .user:nth-child(47):hover, .users .channel:nth-child(47):focus, .users .channel:nth-child(47):hover, .users .user:nth-child(47):focus, .users .user:nth-child(47):hover {
+        background-color: rgba(136, 193, 52, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(48), .channels .user:nth-child(48), .users .channel:nth-child(48), .users .user:nth-child(48) {
+      background-color: rgba(107, 131, 166, 0.2); }
+      .channels .channel:nth-child(48):focus, .channels .channel:nth-child(48):hover, .channels .user:nth-child(48):focus, .channels .user:nth-child(48):hover, .users .channel:nth-child(48):focus, .users .channel:nth-child(48):hover, .users .user:nth-child(48):focus, .users .user:nth-child(48):hover {
+        background-color: rgba(107, 131, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(49), .channels .user:nth-child(49), .users .channel:nth-child(49), .users .user:nth-child(49) {
+      background-color: rgba(247, 200, 8, 0.2); }
+      .channels .channel:nth-child(49):focus, .channels .channel:nth-child(49):hover, .channels .user:nth-child(49):focus, .channels .user:nth-child(49):hover, .users .channel:nth-child(49):focus, .users .channel:nth-child(49):hover, .users .user:nth-child(49):focus, .users .user:nth-child(49):hover {
+        background-color: rgba(247, 200, 8, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(50), .channels .user:nth-child(50), .users .channel:nth-child(50), .users .user:nth-child(50) {
+      background-color: rgba(53, 129, 165, 0.2); }
+      .channels .channel:nth-child(50):focus, .channels .channel:nth-child(50):hover, .channels .user:nth-child(50):focus, .channels .user:nth-child(50):hover, .users .channel:nth-child(50):focus, .users .channel:nth-child(50):hover, .users .user:nth-child(50):focus, .users .user:nth-child(50):hover {
+        background-color: rgba(53, 129, 165, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(51), .channels .user:nth-child(51), .users .channel:nth-child(51), .users .user:nth-child(51) {
+      background-color: rgba(95, 190, 190, 0.2); }
+      .channels .channel:nth-child(51):focus, .channels .channel:nth-child(51):hover, .channels .user:nth-child(51):focus, .channels .user:nth-child(51):hover, .users .channel:nth-child(51):focus, .users .channel:nth-child(51):hover, .users .user:nth-child(51):focus, .users .user:nth-child(51):hover {
+        background-color: rgba(95, 190, 190, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(52), .channels .user:nth-child(52), .users .channel:nth-child(52), .users .user:nth-child(52) {
+      background-color: rgba(152, 199, 154, 0.2); }
+      .channels .channel:nth-child(52):focus, .channels .channel:nth-child(52):hover, .channels .user:nth-child(52):focus, .channels .user:nth-child(52):hover, .users .channel:nth-child(52):focus, .users .channel:nth-child(52):hover, .users .user:nth-child(52):focus, .users .user:nth-child(52):hover {
+        background-color: rgba(152, 199, 154, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(53), .channels .user:nth-child(53), .users .channel:nth-child(53), .users .user:nth-child(53) {
+      background-color: rgba(210, 49, 93, 0.2); }
+      .channels .channel:nth-child(53):focus, .channels .channel:nth-child(53):hover, .channels .user:nth-child(53):focus, .channels .user:nth-child(53):hover, .users .channel:nth-child(53):focus, .users .channel:nth-child(53):hover, .users .user:nth-child(53):focus, .users .user:nth-child(53):hover {
+        background-color: rgba(210, 49, 93, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(54), .channels .user:nth-child(54), .users .channel:nth-child(54), .users .user:nth-child(54) {
+      background-color: rgba(167, 168, 145, 0.2); }
+      .channels .channel:nth-child(54):focus, .channels .channel:nth-child(54):hover, .channels .user:nth-child(54):focus, .channels .user:nth-child(54):hover, .users .channel:nth-child(54):focus, .users .channel:nth-child(54):hover, .users .user:nth-child(54):focus, .users .user:nth-child(54):hover {
+        background-color: rgba(167, 168, 145, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(55), .channels .user:nth-child(55), .users .channel:nth-child(55), .users .user:nth-child(55) {
+      background-color: rgba(56, 144, 144, 0.2); }
+      .channels .channel:nth-child(55):focus, .channels .channel:nth-child(55):hover, .channels .user:nth-child(55):focus, .channels .user:nth-child(55):hover, .users .channel:nth-child(55):focus, .users .channel:nth-child(55):hover, .users .user:nth-child(55):focus, .users .user:nth-child(55):hover {
+        background-color: rgba(56, 144, 144, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(56), .channels .user:nth-child(56), .users .channel:nth-child(56), .users .user:nth-child(56) {
+      background-color: rgba(244, 126, 125, 0.2); }
+      .channels .channel:nth-child(56):focus, .channels .channel:nth-child(56):hover, .channels .user:nth-child(56):focus, .channels .user:nth-child(56):hover, .users .channel:nth-child(56):focus, .users .channel:nth-child(56):hover, .users .user:nth-child(56):focus, .users .user:nth-child(56):hover {
+        background-color: rgba(244, 126, 125, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(57), .channels .user:nth-child(57), .users .channel:nth-child(57), .users .user:nth-child(57) {
+      background-color: rgba(181, 208, 69, 0.2); }
+      .channels .channel:nth-child(57):focus, .channels .channel:nth-child(57):hover, .channels .user:nth-child(57):focus, .channels .user:nth-child(57):hover, .users .channel:nth-child(57):focus, .users .channel:nth-child(57):hover, .users .user:nth-child(57):focus, .users .user:nth-child(57):hover {
+        background-color: rgba(181, 208, 69, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(58), .channels .user:nth-child(58), .users .channel:nth-child(58), .users .user:nth-child(58) {
+      background-color: rgba(251, 131, 53, 0.2); }
+      .channels .channel:nth-child(58):focus, .channels .channel:nth-child(58):hover, .channels .user:nth-child(58):focus, .channels .user:nth-child(58):hover, .users .channel:nth-child(58):focus, .users .channel:nth-child(58):hover, .users .user:nth-child(58):focus, .users .user:nth-child(58):hover {
+        background-color: rgba(251, 131, 53, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(59), .channels .user:nth-child(59), .users .channel:nth-child(59), .users .user:nth-child(59) {
+      background-color: rgba(129, 192, 197, 0.2); }
+      .channels .channel:nth-child(59):focus, .channels .channel:nth-child(59):hover, .channels .user:nth-child(59):focus, .channels .user:nth-child(59):hover, .users .channel:nth-child(59):focus, .users .channel:nth-child(59):hover, .users .user:nth-child(59):focus, .users .user:nth-child(59):hover {
+        background-color: rgba(129, 192, 197, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(60), .channels .user:nth-child(60), .users .channel:nth-child(60), .users .user:nth-child(60) {
+      background-color: rgba(233, 136, 19, 0.2); }
+      .channels .channel:nth-child(60):focus, .channels .channel:nth-child(60):hover, .channels .user:nth-child(60):focus, .channels .user:nth-child(60):hover, .users .channel:nth-child(60):focus, .users .channel:nth-child(60):hover, .users .user:nth-child(60):focus, .users .user:nth-child(60):hover {
+        background-color: rgba(233, 136, 19, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(61), .channels .user:nth-child(61), .users .channel:nth-child(61), .users .user:nth-child(61) {
+      background-color: rgba(34, 181, 191, 0.2); }
+      .channels .channel:nth-child(61):focus, .channels .channel:nth-child(61):hover, .channels .user:nth-child(61):focus, .channels .user:nth-child(61):hover, .users .channel:nth-child(61):focus, .users .channel:nth-child(61):hover, .users .user:nth-child(61):focus, .users .user:nth-child(61):hover {
+        background-color: rgba(34, 181, 191, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(62), .channels .user:nth-child(62), .users .channel:nth-child(62), .users .user:nth-child(62) {
+      background-color: rgba(135, 103, 166, 0.2); }
+      .channels .channel:nth-child(62):focus, .channels .channel:nth-child(62):hover, .channels .user:nth-child(62):focus, .channels .user:nth-child(62):hover, .users .channel:nth-child(62):focus, .users .channel:nth-child(62):hover, .users .user:nth-child(62):focus, .users .user:nth-child(62):hover {
+        background-color: rgba(135, 103, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(63), .channels .user:nth-child(63), .users .channel:nth-child(63), .users .user:nth-child(63) {
+      background-color: rgba(136, 193, 52, 0.2); }
+      .channels .channel:nth-child(63):focus, .channels .channel:nth-child(63):hover, .channels .user:nth-child(63):focus, .channels .user:nth-child(63):hover, .users .channel:nth-child(63):focus, .users .channel:nth-child(63):hover, .users .user:nth-child(63):focus, .users .user:nth-child(63):hover {
+        background-color: rgba(136, 193, 52, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(64), .channels .user:nth-child(64), .users .channel:nth-child(64), .users .user:nth-child(64) {
+      background-color: rgba(107, 131, 166, 0.2); }
+      .channels .channel:nth-child(64):focus, .channels .channel:nth-child(64):hover, .channels .user:nth-child(64):focus, .channels .user:nth-child(64):hover, .users .channel:nth-child(64):focus, .users .channel:nth-child(64):hover, .users .user:nth-child(64):focus, .users .user:nth-child(64):hover {
+        background-color: rgba(107, 131, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(65), .channels .user:nth-child(65), .users .channel:nth-child(65), .users .user:nth-child(65) {
+      background-color: rgba(247, 200, 8, 0.2); }
+      .channels .channel:nth-child(65):focus, .channels .channel:nth-child(65):hover, .channels .user:nth-child(65):focus, .channels .user:nth-child(65):hover, .users .channel:nth-child(65):focus, .users .channel:nth-child(65):hover, .users .user:nth-child(65):focus, .users .user:nth-child(65):hover {
+        background-color: rgba(247, 200, 8, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(66), .channels .user:nth-child(66), .users .channel:nth-child(66), .users .user:nth-child(66) {
+      background-color: rgba(53, 129, 165, 0.2); }
+      .channels .channel:nth-child(66):focus, .channels .channel:nth-child(66):hover, .channels .user:nth-child(66):focus, .channels .user:nth-child(66):hover, .users .channel:nth-child(66):focus, .users .channel:nth-child(66):hover, .users .user:nth-child(66):focus, .users .user:nth-child(66):hover {
+        background-color: rgba(53, 129, 165, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(67), .channels .user:nth-child(67), .users .channel:nth-child(67), .users .user:nth-child(67) {
+      background-color: rgba(95, 190, 190, 0.2); }
+      .channels .channel:nth-child(67):focus, .channels .channel:nth-child(67):hover, .channels .user:nth-child(67):focus, .channels .user:nth-child(67):hover, .users .channel:nth-child(67):focus, .users .channel:nth-child(67):hover, .users .user:nth-child(67):focus, .users .user:nth-child(67):hover {
+        background-color: rgba(95, 190, 190, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(68), .channels .user:nth-child(68), .users .channel:nth-child(68), .users .user:nth-child(68) {
+      background-color: rgba(152, 199, 154, 0.2); }
+      .channels .channel:nth-child(68):focus, .channels .channel:nth-child(68):hover, .channels .user:nth-child(68):focus, .channels .user:nth-child(68):hover, .users .channel:nth-child(68):focus, .users .channel:nth-child(68):hover, .users .user:nth-child(68):focus, .users .user:nth-child(68):hover {
+        background-color: rgba(152, 199, 154, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(69), .channels .user:nth-child(69), .users .channel:nth-child(69), .users .user:nth-child(69) {
+      background-color: rgba(210, 49, 93, 0.2); }
+      .channels .channel:nth-child(69):focus, .channels .channel:nth-child(69):hover, .channels .user:nth-child(69):focus, .channels .user:nth-child(69):hover, .users .channel:nth-child(69):focus, .users .channel:nth-child(69):hover, .users .user:nth-child(69):focus, .users .user:nth-child(69):hover {
+        background-color: rgba(210, 49, 93, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(70), .channels .user:nth-child(70), .users .channel:nth-child(70), .users .user:nth-child(70) {
+      background-color: rgba(167, 168, 145, 0.2); }
+      .channels .channel:nth-child(70):focus, .channels .channel:nth-child(70):hover, .channels .user:nth-child(70):focus, .channels .user:nth-child(70):hover, .users .channel:nth-child(70):focus, .users .channel:nth-child(70):hover, .users .user:nth-child(70):focus, .users .user:nth-child(70):hover {
+        background-color: rgba(167, 168, 145, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(71), .channels .user:nth-child(71), .users .channel:nth-child(71), .users .user:nth-child(71) {
+      background-color: rgba(56, 144, 144, 0.2); }
+      .channels .channel:nth-child(71):focus, .channels .channel:nth-child(71):hover, .channels .user:nth-child(71):focus, .channels .user:nth-child(71):hover, .users .channel:nth-child(71):focus, .users .channel:nth-child(71):hover, .users .user:nth-child(71):focus, .users .user:nth-child(71):hover {
+        background-color: rgba(56, 144, 144, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(72), .channels .user:nth-child(72), .users .channel:nth-child(72), .users .user:nth-child(72) {
+      background-color: rgba(244, 126, 125, 0.2); }
+      .channels .channel:nth-child(72):focus, .channels .channel:nth-child(72):hover, .channels .user:nth-child(72):focus, .channels .user:nth-child(72):hover, .users .channel:nth-child(72):focus, .users .channel:nth-child(72):hover, .users .user:nth-child(72):focus, .users .user:nth-child(72):hover {
+        background-color: rgba(244, 126, 125, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(73), .channels .user:nth-child(73), .users .channel:nth-child(73), .users .user:nth-child(73) {
+      background-color: rgba(181, 208, 69, 0.2); }
+      .channels .channel:nth-child(73):focus, .channels .channel:nth-child(73):hover, .channels .user:nth-child(73):focus, .channels .user:nth-child(73):hover, .users .channel:nth-child(73):focus, .users .channel:nth-child(73):hover, .users .user:nth-child(73):focus, .users .user:nth-child(73):hover {
+        background-color: rgba(181, 208, 69, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(74), .channels .user:nth-child(74), .users .channel:nth-child(74), .users .user:nth-child(74) {
+      background-color: rgba(251, 131, 53, 0.2); }
+      .channels .channel:nth-child(74):focus, .channels .channel:nth-child(74):hover, .channels .user:nth-child(74):focus, .channels .user:nth-child(74):hover, .users .channel:nth-child(74):focus, .users .channel:nth-child(74):hover, .users .user:nth-child(74):focus, .users .user:nth-child(74):hover {
+        background-color: rgba(251, 131, 53, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(75), .channels .user:nth-child(75), .users .channel:nth-child(75), .users .user:nth-child(75) {
+      background-color: rgba(129, 192, 197, 0.2); }
+      .channels .channel:nth-child(75):focus, .channels .channel:nth-child(75):hover, .channels .user:nth-child(75):focus, .channels .user:nth-child(75):hover, .users .channel:nth-child(75):focus, .users .channel:nth-child(75):hover, .users .user:nth-child(75):focus, .users .user:nth-child(75):hover {
+        background-color: rgba(129, 192, 197, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(76), .channels .user:nth-child(76), .users .channel:nth-child(76), .users .user:nth-child(76) {
+      background-color: rgba(233, 136, 19, 0.2); }
+      .channels .channel:nth-child(76):focus, .channels .channel:nth-child(76):hover, .channels .user:nth-child(76):focus, .channels .user:nth-child(76):hover, .users .channel:nth-child(76):focus, .users .channel:nth-child(76):hover, .users .user:nth-child(76):focus, .users .user:nth-child(76):hover {
+        background-color: rgba(233, 136, 19, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(77), .channels .user:nth-child(77), .users .channel:nth-child(77), .users .user:nth-child(77) {
+      background-color: rgba(34, 181, 191, 0.2); }
+      .channels .channel:nth-child(77):focus, .channels .channel:nth-child(77):hover, .channels .user:nth-child(77):focus, .channels .user:nth-child(77):hover, .users .channel:nth-child(77):focus, .users .channel:nth-child(77):hover, .users .user:nth-child(77):focus, .users .user:nth-child(77):hover {
+        background-color: rgba(34, 181, 191, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(78), .channels .user:nth-child(78), .users .channel:nth-child(78), .users .user:nth-child(78) {
+      background-color: rgba(135, 103, 166, 0.2); }
+      .channels .channel:nth-child(78):focus, .channels .channel:nth-child(78):hover, .channels .user:nth-child(78):focus, .channels .user:nth-child(78):hover, .users .channel:nth-child(78):focus, .users .channel:nth-child(78):hover, .users .user:nth-child(78):focus, .users .user:nth-child(78):hover {
+        background-color: rgba(135, 103, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(79), .channels .user:nth-child(79), .users .channel:nth-child(79), .users .user:nth-child(79) {
+      background-color: rgba(136, 193, 52, 0.2); }
+      .channels .channel:nth-child(79):focus, .channels .channel:nth-child(79):hover, .channels .user:nth-child(79):focus, .channels .user:nth-child(79):hover, .users .channel:nth-child(79):focus, .users .channel:nth-child(79):hover, .users .user:nth-child(79):focus, .users .user:nth-child(79):hover {
+        background-color: rgba(136, 193, 52, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(80), .channels .user:nth-child(80), .users .channel:nth-child(80), .users .user:nth-child(80) {
+      background-color: rgba(107, 131, 166, 0.2); }
+      .channels .channel:nth-child(80):focus, .channels .channel:nth-child(80):hover, .channels .user:nth-child(80):focus, .channels .user:nth-child(80):hover, .users .channel:nth-child(80):focus, .users .channel:nth-child(80):hover, .users .user:nth-child(80):focus, .users .user:nth-child(80):hover {
+        background-color: rgba(107, 131, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(81), .channels .user:nth-child(81), .users .channel:nth-child(81), .users .user:nth-child(81) {
+      background-color: rgba(247, 200, 8, 0.2); }
+      .channels .channel:nth-child(81):focus, .channels .channel:nth-child(81):hover, .channels .user:nth-child(81):focus, .channels .user:nth-child(81):hover, .users .channel:nth-child(81):focus, .users .channel:nth-child(81):hover, .users .user:nth-child(81):focus, .users .user:nth-child(81):hover {
+        background-color: rgba(247, 200, 8, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(82), .channels .user:nth-child(82), .users .channel:nth-child(82), .users .user:nth-child(82) {
+      background-color: rgba(53, 129, 165, 0.2); }
+      .channels .channel:nth-child(82):focus, .channels .channel:nth-child(82):hover, .channels .user:nth-child(82):focus, .channels .user:nth-child(82):hover, .users .channel:nth-child(82):focus, .users .channel:nth-child(82):hover, .users .user:nth-child(82):focus, .users .user:nth-child(82):hover {
+        background-color: rgba(53, 129, 165, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(83), .channels .user:nth-child(83), .users .channel:nth-child(83), .users .user:nth-child(83) {
+      background-color: rgba(95, 190, 190, 0.2); }
+      .channels .channel:nth-child(83):focus, .channels .channel:nth-child(83):hover, .channels .user:nth-child(83):focus, .channels .user:nth-child(83):hover, .users .channel:nth-child(83):focus, .users .channel:nth-child(83):hover, .users .user:nth-child(83):focus, .users .user:nth-child(83):hover {
+        background-color: rgba(95, 190, 190, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(84), .channels .user:nth-child(84), .users .channel:nth-child(84), .users .user:nth-child(84) {
+      background-color: rgba(152, 199, 154, 0.2); }
+      .channels .channel:nth-child(84):focus, .channels .channel:nth-child(84):hover, .channels .user:nth-child(84):focus, .channels .user:nth-child(84):hover, .users .channel:nth-child(84):focus, .users .channel:nth-child(84):hover, .users .user:nth-child(84):focus, .users .user:nth-child(84):hover {
+        background-color: rgba(152, 199, 154, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(85), .channels .user:nth-child(85), .users .channel:nth-child(85), .users .user:nth-child(85) {
+      background-color: rgba(210, 49, 93, 0.2); }
+      .channels .channel:nth-child(85):focus, .channels .channel:nth-child(85):hover, .channels .user:nth-child(85):focus, .channels .user:nth-child(85):hover, .users .channel:nth-child(85):focus, .users .channel:nth-child(85):hover, .users .user:nth-child(85):focus, .users .user:nth-child(85):hover {
+        background-color: rgba(210, 49, 93, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(86), .channels .user:nth-child(86), .users .channel:nth-child(86), .users .user:nth-child(86) {
+      background-color: rgba(167, 168, 145, 0.2); }
+      .channels .channel:nth-child(86):focus, .channels .channel:nth-child(86):hover, .channels .user:nth-child(86):focus, .channels .user:nth-child(86):hover, .users .channel:nth-child(86):focus, .users .channel:nth-child(86):hover, .users .user:nth-child(86):focus, .users .user:nth-child(86):hover {
+        background-color: rgba(167, 168, 145, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(87), .channels .user:nth-child(87), .users .channel:nth-child(87), .users .user:nth-child(87) {
+      background-color: rgba(56, 144, 144, 0.2); }
+      .channels .channel:nth-child(87):focus, .channels .channel:nth-child(87):hover, .channels .user:nth-child(87):focus, .channels .user:nth-child(87):hover, .users .channel:nth-child(87):focus, .users .channel:nth-child(87):hover, .users .user:nth-child(87):focus, .users .user:nth-child(87):hover {
+        background-color: rgba(56, 144, 144, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(88), .channels .user:nth-child(88), .users .channel:nth-child(88), .users .user:nth-child(88) {
+      background-color: rgba(244, 126, 125, 0.2); }
+      .channels .channel:nth-child(88):focus, .channels .channel:nth-child(88):hover, .channels .user:nth-child(88):focus, .channels .user:nth-child(88):hover, .users .channel:nth-child(88):focus, .users .channel:nth-child(88):hover, .users .user:nth-child(88):focus, .users .user:nth-child(88):hover {
+        background-color: rgba(244, 126, 125, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(89), .channels .user:nth-child(89), .users .channel:nth-child(89), .users .user:nth-child(89) {
+      background-color: rgba(181, 208, 69, 0.2); }
+      .channels .channel:nth-child(89):focus, .channels .channel:nth-child(89):hover, .channels .user:nth-child(89):focus, .channels .user:nth-child(89):hover, .users .channel:nth-child(89):focus, .users .channel:nth-child(89):hover, .users .user:nth-child(89):focus, .users .user:nth-child(89):hover {
+        background-color: rgba(181, 208, 69, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(90), .channels .user:nth-child(90), .users .channel:nth-child(90), .users .user:nth-child(90) {
+      background-color: rgba(251, 131, 53, 0.2); }
+      .channels .channel:nth-child(90):focus, .channels .channel:nth-child(90):hover, .channels .user:nth-child(90):focus, .channels .user:nth-child(90):hover, .users .channel:nth-child(90):focus, .users .channel:nth-child(90):hover, .users .user:nth-child(90):focus, .users .user:nth-child(90):hover {
+        background-color: rgba(251, 131, 53, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(91), .channels .user:nth-child(91), .users .channel:nth-child(91), .users .user:nth-child(91) {
+      background-color: rgba(129, 192, 197, 0.2); }
+      .channels .channel:nth-child(91):focus, .channels .channel:nth-child(91):hover, .channels .user:nth-child(91):focus, .channels .user:nth-child(91):hover, .users .channel:nth-child(91):focus, .users .channel:nth-child(91):hover, .users .user:nth-child(91):focus, .users .user:nth-child(91):hover {
+        background-color: rgba(129, 192, 197, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(92), .channels .user:nth-child(92), .users .channel:nth-child(92), .users .user:nth-child(92) {
+      background-color: rgba(233, 136, 19, 0.2); }
+      .channels .channel:nth-child(92):focus, .channels .channel:nth-child(92):hover, .channels .user:nth-child(92):focus, .channels .user:nth-child(92):hover, .users .channel:nth-child(92):focus, .users .channel:nth-child(92):hover, .users .user:nth-child(92):focus, .users .user:nth-child(92):hover {
+        background-color: rgba(233, 136, 19, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(93), .channels .user:nth-child(93), .users .channel:nth-child(93), .users .user:nth-child(93) {
+      background-color: rgba(34, 181, 191, 0.2); }
+      .channels .channel:nth-child(93):focus, .channels .channel:nth-child(93):hover, .channels .user:nth-child(93):focus, .channels .user:nth-child(93):hover, .users .channel:nth-child(93):focus, .users .channel:nth-child(93):hover, .users .user:nth-child(93):focus, .users .user:nth-child(93):hover {
+        background-color: rgba(34, 181, 191, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(94), .channels .user:nth-child(94), .users .channel:nth-child(94), .users .user:nth-child(94) {
+      background-color: rgba(135, 103, 166, 0.2); }
+      .channels .channel:nth-child(94):focus, .channels .channel:nth-child(94):hover, .channels .user:nth-child(94):focus, .channels .user:nth-child(94):hover, .users .channel:nth-child(94):focus, .users .channel:nth-child(94):hover, .users .user:nth-child(94):focus, .users .user:nth-child(94):hover {
+        background-color: rgba(135, 103, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(95), .channels .user:nth-child(95), .users .channel:nth-child(95), .users .user:nth-child(95) {
+      background-color: rgba(136, 193, 52, 0.2); }
+      .channels .channel:nth-child(95):focus, .channels .channel:nth-child(95):hover, .channels .user:nth-child(95):focus, .channels .user:nth-child(95):hover, .users .channel:nth-child(95):focus, .users .channel:nth-child(95):hover, .users .user:nth-child(95):focus, .users .user:nth-child(95):hover {
+        background-color: rgba(136, 193, 52, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(96), .channels .user:nth-child(96), .users .channel:nth-child(96), .users .user:nth-child(96) {
+      background-color: rgba(107, 131, 166, 0.2); }
+      .channels .channel:nth-child(96):focus, .channels .channel:nth-child(96):hover, .channels .user:nth-child(96):focus, .channels .user:nth-child(96):hover, .users .channel:nth-child(96):focus, .users .channel:nth-child(96):hover, .users .user:nth-child(96):focus, .users .user:nth-child(96):hover {
+        background-color: rgba(107, 131, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(97), .channels .user:nth-child(97), .users .channel:nth-child(97), .users .user:nth-child(97) {
+      background-color: rgba(247, 200, 8, 0.2); }
+      .channels .channel:nth-child(97):focus, .channels .channel:nth-child(97):hover, .channels .user:nth-child(97):focus, .channels .user:nth-child(97):hover, .users .channel:nth-child(97):focus, .users .channel:nth-child(97):hover, .users .user:nth-child(97):focus, .users .user:nth-child(97):hover {
+        background-color: rgba(247, 200, 8, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(98), .channels .user:nth-child(98), .users .channel:nth-child(98), .users .user:nth-child(98) {
+      background-color: rgba(53, 129, 165, 0.2); }
+      .channels .channel:nth-child(98):focus, .channels .channel:nth-child(98):hover, .channels .user:nth-child(98):focus, .channels .user:nth-child(98):hover, .users .channel:nth-child(98):focus, .users .channel:nth-child(98):hover, .users .user:nth-child(98):focus, .users .user:nth-child(98):hover {
+        background-color: rgba(53, 129, 165, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(99), .channels .user:nth-child(99), .users .channel:nth-child(99), .users .user:nth-child(99) {
+      background-color: rgba(95, 190, 190, 0.2); }
+      .channels .channel:nth-child(99):focus, .channels .channel:nth-child(99):hover, .channels .user:nth-child(99):focus, .channels .user:nth-child(99):hover, .users .channel:nth-child(99):focus, .users .channel:nth-child(99):hover, .users .user:nth-child(99):focus, .users .user:nth-child(99):hover {
+        background-color: rgba(95, 190, 190, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(100), .channels .user:nth-child(100), .users .channel:nth-child(100), .users .user:nth-child(100) {
+      background-color: rgba(152, 199, 154, 0.2); }
+      .channels .channel:nth-child(100):focus, .channels .channel:nth-child(100):hover, .channels .user:nth-child(100):focus, .channels .user:nth-child(100):hover, .users .channel:nth-child(100):focus, .users .channel:nth-child(100):hover, .users .user:nth-child(100):focus, .users .user:nth-child(100):hover {
+        background-color: rgba(152, 199, 154, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(101), .channels .user:nth-child(101), .users .channel:nth-child(101), .users .user:nth-child(101) {
+      background-color: rgba(210, 49, 93, 0.2); }
+      .channels .channel:nth-child(101):focus, .channels .channel:nth-child(101):hover, .channels .user:nth-child(101):focus, .channels .user:nth-child(101):hover, .users .channel:nth-child(101):focus, .users .channel:nth-child(101):hover, .users .user:nth-child(101):focus, .users .user:nth-child(101):hover {
+        background-color: rgba(210, 49, 93, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(102), .channels .user:nth-child(102), .users .channel:nth-child(102), .users .user:nth-child(102) {
+      background-color: rgba(167, 168, 145, 0.2); }
+      .channels .channel:nth-child(102):focus, .channels .channel:nth-child(102):hover, .channels .user:nth-child(102):focus, .channels .user:nth-child(102):hover, .users .channel:nth-child(102):focus, .users .channel:nth-child(102):hover, .users .user:nth-child(102):focus, .users .user:nth-child(102):hover {
+        background-color: rgba(167, 168, 145, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(103), .channels .user:nth-child(103), .users .channel:nth-child(103), .users .user:nth-child(103) {
+      background-color: rgba(56, 144, 144, 0.2); }
+      .channels .channel:nth-child(103):focus, .channels .channel:nth-child(103):hover, .channels .user:nth-child(103):focus, .channels .user:nth-child(103):hover, .users .channel:nth-child(103):focus, .users .channel:nth-child(103):hover, .users .user:nth-child(103):focus, .users .user:nth-child(103):hover {
+        background-color: rgba(56, 144, 144, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(104), .channels .user:nth-child(104), .users .channel:nth-child(104), .users .user:nth-child(104) {
+      background-color: rgba(244, 126, 125, 0.2); }
+      .channels .channel:nth-child(104):focus, .channels .channel:nth-child(104):hover, .channels .user:nth-child(104):focus, .channels .user:nth-child(104):hover, .users .channel:nth-child(104):focus, .users .channel:nth-child(104):hover, .users .user:nth-child(104):focus, .users .user:nth-child(104):hover {
+        background-color: rgba(244, 126, 125, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(105), .channels .user:nth-child(105), .users .channel:nth-child(105), .users .user:nth-child(105) {
+      background-color: rgba(181, 208, 69, 0.2); }
+      .channels .channel:nth-child(105):focus, .channels .channel:nth-child(105):hover, .channels .user:nth-child(105):focus, .channels .user:nth-child(105):hover, .users .channel:nth-child(105):focus, .users .channel:nth-child(105):hover, .users .user:nth-child(105):focus, .users .user:nth-child(105):hover {
+        background-color: rgba(181, 208, 69, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(106), .channels .user:nth-child(106), .users .channel:nth-child(106), .users .user:nth-child(106) {
+      background-color: rgba(251, 131, 53, 0.2); }
+      .channels .channel:nth-child(106):focus, .channels .channel:nth-child(106):hover, .channels .user:nth-child(106):focus, .channels .user:nth-child(106):hover, .users .channel:nth-child(106):focus, .users .channel:nth-child(106):hover, .users .user:nth-child(106):focus, .users .user:nth-child(106):hover {
+        background-color: rgba(251, 131, 53, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(107), .channels .user:nth-child(107), .users .channel:nth-child(107), .users .user:nth-child(107) {
+      background-color: rgba(129, 192, 197, 0.2); }
+      .channels .channel:nth-child(107):focus, .channels .channel:nth-child(107):hover, .channels .user:nth-child(107):focus, .channels .user:nth-child(107):hover, .users .channel:nth-child(107):focus, .users .channel:nth-child(107):hover, .users .user:nth-child(107):focus, .users .user:nth-child(107):hover {
+        background-color: rgba(129, 192, 197, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(108), .channels .user:nth-child(108), .users .channel:nth-child(108), .users .user:nth-child(108) {
+      background-color: rgba(233, 136, 19, 0.2); }
+      .channels .channel:nth-child(108):focus, .channels .channel:nth-child(108):hover, .channels .user:nth-child(108):focus, .channels .user:nth-child(108):hover, .users .channel:nth-child(108):focus, .users .channel:nth-child(108):hover, .users .user:nth-child(108):focus, .users .user:nth-child(108):hover {
+        background-color: rgba(233, 136, 19, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(109), .channels .user:nth-child(109), .users .channel:nth-child(109), .users .user:nth-child(109) {
+      background-color: rgba(34, 181, 191, 0.2); }
+      .channels .channel:nth-child(109):focus, .channels .channel:nth-child(109):hover, .channels .user:nth-child(109):focus, .channels .user:nth-child(109):hover, .users .channel:nth-child(109):focus, .users .channel:nth-child(109):hover, .users .user:nth-child(109):focus, .users .user:nth-child(109):hover {
+        background-color: rgba(34, 181, 191, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(110), .channels .user:nth-child(110), .users .channel:nth-child(110), .users .user:nth-child(110) {
+      background-color: rgba(135, 103, 166, 0.2); }
+      .channels .channel:nth-child(110):focus, .channels .channel:nth-child(110):hover, .channels .user:nth-child(110):focus, .channels .user:nth-child(110):hover, .users .channel:nth-child(110):focus, .users .channel:nth-child(110):hover, .users .user:nth-child(110):focus, .users .user:nth-child(110):hover {
+        background-color: rgba(135, 103, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(111), .channels .user:nth-child(111), .users .channel:nth-child(111), .users .user:nth-child(111) {
+      background-color: rgba(136, 193, 52, 0.2); }
+      .channels .channel:nth-child(111):focus, .channels .channel:nth-child(111):hover, .channels .user:nth-child(111):focus, .channels .user:nth-child(111):hover, .users .channel:nth-child(111):focus, .users .channel:nth-child(111):hover, .users .user:nth-child(111):focus, .users .user:nth-child(111):hover {
+        background-color: rgba(136, 193, 52, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(112), .channels .user:nth-child(112), .users .channel:nth-child(112), .users .user:nth-child(112) {
+      background-color: rgba(107, 131, 166, 0.2); }
+      .channels .channel:nth-child(112):focus, .channels .channel:nth-child(112):hover, .channels .user:nth-child(112):focus, .channels .user:nth-child(112):hover, .users .channel:nth-child(112):focus, .users .channel:nth-child(112):hover, .users .user:nth-child(112):focus, .users .user:nth-child(112):hover {
+        background-color: rgba(107, 131, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(113), .channels .user:nth-child(113), .users .channel:nth-child(113), .users .user:nth-child(113) {
+      background-color: rgba(247, 200, 8, 0.2); }
+      .channels .channel:nth-child(113):focus, .channels .channel:nth-child(113):hover, .channels .user:nth-child(113):focus, .channels .user:nth-child(113):hover, .users .channel:nth-child(113):focus, .users .channel:nth-child(113):hover, .users .user:nth-child(113):focus, .users .user:nth-child(113):hover {
+        background-color: rgba(247, 200, 8, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(114), .channels .user:nth-child(114), .users .channel:nth-child(114), .users .user:nth-child(114) {
+      background-color: rgba(53, 129, 165, 0.2); }
+      .channels .channel:nth-child(114):focus, .channels .channel:nth-child(114):hover, .channels .user:nth-child(114):focus, .channels .user:nth-child(114):hover, .users .channel:nth-child(114):focus, .users .channel:nth-child(114):hover, .users .user:nth-child(114):focus, .users .user:nth-child(114):hover {
+        background-color: rgba(53, 129, 165, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(115), .channels .user:nth-child(115), .users .channel:nth-child(115), .users .user:nth-child(115) {
+      background-color: rgba(95, 190, 190, 0.2); }
+      .channels .channel:nth-child(115):focus, .channels .channel:nth-child(115):hover, .channels .user:nth-child(115):focus, .channels .user:nth-child(115):hover, .users .channel:nth-child(115):focus, .users .channel:nth-child(115):hover, .users .user:nth-child(115):focus, .users .user:nth-child(115):hover {
+        background-color: rgba(95, 190, 190, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(116), .channels .user:nth-child(116), .users .channel:nth-child(116), .users .user:nth-child(116) {
+      background-color: rgba(152, 199, 154, 0.2); }
+      .channels .channel:nth-child(116):focus, .channels .channel:nth-child(116):hover, .channels .user:nth-child(116):focus, .channels .user:nth-child(116):hover, .users .channel:nth-child(116):focus, .users .channel:nth-child(116):hover, .users .user:nth-child(116):focus, .users .user:nth-child(116):hover {
+        background-color: rgba(152, 199, 154, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(117), .channels .user:nth-child(117), .users .channel:nth-child(117), .users .user:nth-child(117) {
+      background-color: rgba(210, 49, 93, 0.2); }
+      .channels .channel:nth-child(117):focus, .channels .channel:nth-child(117):hover, .channels .user:nth-child(117):focus, .channels .user:nth-child(117):hover, .users .channel:nth-child(117):focus, .users .channel:nth-child(117):hover, .users .user:nth-child(117):focus, .users .user:nth-child(117):hover {
+        background-color: rgba(210, 49, 93, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(118), .channels .user:nth-child(118), .users .channel:nth-child(118), .users .user:nth-child(118) {
+      background-color: rgba(167, 168, 145, 0.2); }
+      .channels .channel:nth-child(118):focus, .channels .channel:nth-child(118):hover, .channels .user:nth-child(118):focus, .channels .user:nth-child(118):hover, .users .channel:nth-child(118):focus, .users .channel:nth-child(118):hover, .users .user:nth-child(118):focus, .users .user:nth-child(118):hover {
+        background-color: rgba(167, 168, 145, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(119), .channels .user:nth-child(119), .users .channel:nth-child(119), .users .user:nth-child(119) {
+      background-color: rgba(56, 144, 144, 0.2); }
+      .channels .channel:nth-child(119):focus, .channels .channel:nth-child(119):hover, .channels .user:nth-child(119):focus, .channels .user:nth-child(119):hover, .users .channel:nth-child(119):focus, .users .channel:nth-child(119):hover, .users .user:nth-child(119):focus, .users .user:nth-child(119):hover {
+        background-color: rgba(56, 144, 144, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(120), .channels .user:nth-child(120), .users .channel:nth-child(120), .users .user:nth-child(120) {
+      background-color: rgba(244, 126, 125, 0.2); }
+      .channels .channel:nth-child(120):focus, .channels .channel:nth-child(120):hover, .channels .user:nth-child(120):focus, .channels .user:nth-child(120):hover, .users .channel:nth-child(120):focus, .users .channel:nth-child(120):hover, .users .user:nth-child(120):focus, .users .user:nth-child(120):hover {
+        background-color: rgba(244, 126, 125, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(121), .channels .user:nth-child(121), .users .channel:nth-child(121), .users .user:nth-child(121) {
+      background-color: rgba(181, 208, 69, 0.2); }
+      .channels .channel:nth-child(121):focus, .channels .channel:nth-child(121):hover, .channels .user:nth-child(121):focus, .channels .user:nth-child(121):hover, .users .channel:nth-child(121):focus, .users .channel:nth-child(121):hover, .users .user:nth-child(121):focus, .users .user:nth-child(121):hover {
+        background-color: rgba(181, 208, 69, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(122), .channels .user:nth-child(122), .users .channel:nth-child(122), .users .user:nth-child(122) {
+      background-color: rgba(251, 131, 53, 0.2); }
+      .channels .channel:nth-child(122):focus, .channels .channel:nth-child(122):hover, .channels .user:nth-child(122):focus, .channels .user:nth-child(122):hover, .users .channel:nth-child(122):focus, .users .channel:nth-child(122):hover, .users .user:nth-child(122):focus, .users .user:nth-child(122):hover {
+        background-color: rgba(251, 131, 53, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(123), .channels .user:nth-child(123), .users .channel:nth-child(123), .users .user:nth-child(123) {
+      background-color: rgba(129, 192, 197, 0.2); }
+      .channels .channel:nth-child(123):focus, .channels .channel:nth-child(123):hover, .channels .user:nth-child(123):focus, .channels .user:nth-child(123):hover, .users .channel:nth-child(123):focus, .users .channel:nth-child(123):hover, .users .user:nth-child(123):focus, .users .user:nth-child(123):hover {
+        background-color: rgba(129, 192, 197, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(124), .channels .user:nth-child(124), .users .channel:nth-child(124), .users .user:nth-child(124) {
+      background-color: rgba(233, 136, 19, 0.2); }
+      .channels .channel:nth-child(124):focus, .channels .channel:nth-child(124):hover, .channels .user:nth-child(124):focus, .channels .user:nth-child(124):hover, .users .channel:nth-child(124):focus, .users .channel:nth-child(124):hover, .users .user:nth-child(124):focus, .users .user:nth-child(124):hover {
+        background-color: rgba(233, 136, 19, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(125), .channels .user:nth-child(125), .users .channel:nth-child(125), .users .user:nth-child(125) {
+      background-color: rgba(34, 181, 191, 0.2); }
+      .channels .channel:nth-child(125):focus, .channels .channel:nth-child(125):hover, .channels .user:nth-child(125):focus, .channels .user:nth-child(125):hover, .users .channel:nth-child(125):focus, .users .channel:nth-child(125):hover, .users .user:nth-child(125):focus, .users .user:nth-child(125):hover {
+        background-color: rgba(34, 181, 191, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(126), .channels .user:nth-child(126), .users .channel:nth-child(126), .users .user:nth-child(126) {
+      background-color: rgba(135, 103, 166, 0.2); }
+      .channels .channel:nth-child(126):focus, .channels .channel:nth-child(126):hover, .channels .user:nth-child(126):focus, .channels .user:nth-child(126):hover, .users .channel:nth-child(126):focus, .users .channel:nth-child(126):hover, .users .user:nth-child(126):focus, .users .user:nth-child(126):hover {
+        background-color: rgba(135, 103, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(127), .channels .user:nth-child(127), .users .channel:nth-child(127), .users .user:nth-child(127) {
+      background-color: rgba(136, 193, 52, 0.2); }
+      .channels .channel:nth-child(127):focus, .channels .channel:nth-child(127):hover, .channels .user:nth-child(127):focus, .channels .user:nth-child(127):hover, .users .channel:nth-child(127):focus, .users .channel:nth-child(127):hover, .users .user:nth-child(127):focus, .users .user:nth-child(127):hover {
+        background-color: rgba(136, 193, 52, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(128), .channels .user:nth-child(128), .users .channel:nth-child(128), .users .user:nth-child(128) {
+      background-color: rgba(107, 131, 166, 0.2); }
+      .channels .channel:nth-child(128):focus, .channels .channel:nth-child(128):hover, .channels .user:nth-child(128):focus, .channels .user:nth-child(128):hover, .users .channel:nth-child(128):focus, .users .channel:nth-child(128):hover, .users .user:nth-child(128):focus, .users .user:nth-child(128):hover {
+        background-color: rgba(107, 131, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(129), .channels .user:nth-child(129), .users .channel:nth-child(129), .users .user:nth-child(129) {
+      background-color: rgba(247, 200, 8, 0.2); }
+      .channels .channel:nth-child(129):focus, .channels .channel:nth-child(129):hover, .channels .user:nth-child(129):focus, .channels .user:nth-child(129):hover, .users .channel:nth-child(129):focus, .users .channel:nth-child(129):hover, .users .user:nth-child(129):focus, .users .user:nth-child(129):hover {
+        background-color: rgba(247, 200, 8, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(130), .channels .user:nth-child(130), .users .channel:nth-child(130), .users .user:nth-child(130) {
+      background-color: rgba(53, 129, 165, 0.2); }
+      .channels .channel:nth-child(130):focus, .channels .channel:nth-child(130):hover, .channels .user:nth-child(130):focus, .channels .user:nth-child(130):hover, .users .channel:nth-child(130):focus, .users .channel:nth-child(130):hover, .users .user:nth-child(130):focus, .users .user:nth-child(130):hover {
+        background-color: rgba(53, 129, 165, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(131), .channels .user:nth-child(131), .users .channel:nth-child(131), .users .user:nth-child(131) {
+      background-color: rgba(95, 190, 190, 0.2); }
+      .channels .channel:nth-child(131):focus, .channels .channel:nth-child(131):hover, .channels .user:nth-child(131):focus, .channels .user:nth-child(131):hover, .users .channel:nth-child(131):focus, .users .channel:nth-child(131):hover, .users .user:nth-child(131):focus, .users .user:nth-child(131):hover {
+        background-color: rgba(95, 190, 190, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(132), .channels .user:nth-child(132), .users .channel:nth-child(132), .users .user:nth-child(132) {
+      background-color: rgba(152, 199, 154, 0.2); }
+      .channels .channel:nth-child(132):focus, .channels .channel:nth-child(132):hover, .channels .user:nth-child(132):focus, .channels .user:nth-child(132):hover, .users .channel:nth-child(132):focus, .users .channel:nth-child(132):hover, .users .user:nth-child(132):focus, .users .user:nth-child(132):hover {
+        background-color: rgba(152, 199, 154, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(133), .channels .user:nth-child(133), .users .channel:nth-child(133), .users .user:nth-child(133) {
+      background-color: rgba(210, 49, 93, 0.2); }
+      .channels .channel:nth-child(133):focus, .channels .channel:nth-child(133):hover, .channels .user:nth-child(133):focus, .channels .user:nth-child(133):hover, .users .channel:nth-child(133):focus, .users .channel:nth-child(133):hover, .users .user:nth-child(133):focus, .users .user:nth-child(133):hover {
+        background-color: rgba(210, 49, 93, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(134), .channels .user:nth-child(134), .users .channel:nth-child(134), .users .user:nth-child(134) {
+      background-color: rgba(167, 168, 145, 0.2); }
+      .channels .channel:nth-child(134):focus, .channels .channel:nth-child(134):hover, .channels .user:nth-child(134):focus, .channels .user:nth-child(134):hover, .users .channel:nth-child(134):focus, .users .channel:nth-child(134):hover, .users .user:nth-child(134):focus, .users .user:nth-child(134):hover {
+        background-color: rgba(167, 168, 145, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(135), .channels .user:nth-child(135), .users .channel:nth-child(135), .users .user:nth-child(135) {
+      background-color: rgba(56, 144, 144, 0.2); }
+      .channels .channel:nth-child(135):focus, .channels .channel:nth-child(135):hover, .channels .user:nth-child(135):focus, .channels .user:nth-child(135):hover, .users .channel:nth-child(135):focus, .users .channel:nth-child(135):hover, .users .user:nth-child(135):focus, .users .user:nth-child(135):hover {
+        background-color: rgba(56, 144, 144, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(136), .channels .user:nth-child(136), .users .channel:nth-child(136), .users .user:nth-child(136) {
+      background-color: rgba(244, 126, 125, 0.2); }
+      .channels .channel:nth-child(136):focus, .channels .channel:nth-child(136):hover, .channels .user:nth-child(136):focus, .channels .user:nth-child(136):hover, .users .channel:nth-child(136):focus, .users .channel:nth-child(136):hover, .users .user:nth-child(136):focus, .users .user:nth-child(136):hover {
+        background-color: rgba(244, 126, 125, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(137), .channels .user:nth-child(137), .users .channel:nth-child(137), .users .user:nth-child(137) {
+      background-color: rgba(181, 208, 69, 0.2); }
+      .channels .channel:nth-child(137):focus, .channels .channel:nth-child(137):hover, .channels .user:nth-child(137):focus, .channels .user:nth-child(137):hover, .users .channel:nth-child(137):focus, .users .channel:nth-child(137):hover, .users .user:nth-child(137):focus, .users .user:nth-child(137):hover {
+        background-color: rgba(181, 208, 69, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(138), .channels .user:nth-child(138), .users .channel:nth-child(138), .users .user:nth-child(138) {
+      background-color: rgba(251, 131, 53, 0.2); }
+      .channels .channel:nth-child(138):focus, .channels .channel:nth-child(138):hover, .channels .user:nth-child(138):focus, .channels .user:nth-child(138):hover, .users .channel:nth-child(138):focus, .users .channel:nth-child(138):hover, .users .user:nth-child(138):focus, .users .user:nth-child(138):hover {
+        background-color: rgba(251, 131, 53, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(139), .channels .user:nth-child(139), .users .channel:nth-child(139), .users .user:nth-child(139) {
+      background-color: rgba(129, 192, 197, 0.2); }
+      .channels .channel:nth-child(139):focus, .channels .channel:nth-child(139):hover, .channels .user:nth-child(139):focus, .channels .user:nth-child(139):hover, .users .channel:nth-child(139):focus, .users .channel:nth-child(139):hover, .users .user:nth-child(139):focus, .users .user:nth-child(139):hover {
+        background-color: rgba(129, 192, 197, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(140), .channels .user:nth-child(140), .users .channel:nth-child(140), .users .user:nth-child(140) {
+      background-color: rgba(233, 136, 19, 0.2); }
+      .channels .channel:nth-child(140):focus, .channels .channel:nth-child(140):hover, .channels .user:nth-child(140):focus, .channels .user:nth-child(140):hover, .users .channel:nth-child(140):focus, .users .channel:nth-child(140):hover, .users .user:nth-child(140):focus, .users .user:nth-child(140):hover {
+        background-color: rgba(233, 136, 19, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(141), .channels .user:nth-child(141), .users .channel:nth-child(141), .users .user:nth-child(141) {
+      background-color: rgba(34, 181, 191, 0.2); }
+      .channels .channel:nth-child(141):focus, .channels .channel:nth-child(141):hover, .channels .user:nth-child(141):focus, .channels .user:nth-child(141):hover, .users .channel:nth-child(141):focus, .users .channel:nth-child(141):hover, .users .user:nth-child(141):focus, .users .user:nth-child(141):hover {
+        background-color: rgba(34, 181, 191, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(142), .channels .user:nth-child(142), .users .channel:nth-child(142), .users .user:nth-child(142) {
+      background-color: rgba(135, 103, 166, 0.2); }
+      .channels .channel:nth-child(142):focus, .channels .channel:nth-child(142):hover, .channels .user:nth-child(142):focus, .channels .user:nth-child(142):hover, .users .channel:nth-child(142):focus, .users .channel:nth-child(142):hover, .users .user:nth-child(142):focus, .users .user:nth-child(142):hover {
+        background-color: rgba(135, 103, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(143), .channels .user:nth-child(143), .users .channel:nth-child(143), .users .user:nth-child(143) {
+      background-color: rgba(136, 193, 52, 0.2); }
+      .channels .channel:nth-child(143):focus, .channels .channel:nth-child(143):hover, .channels .user:nth-child(143):focus, .channels .user:nth-child(143):hover, .users .channel:nth-child(143):focus, .users .channel:nth-child(143):hover, .users .user:nth-child(143):focus, .users .user:nth-child(143):hover {
+        background-color: rgba(136, 193, 52, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(144), .channels .user:nth-child(144), .users .channel:nth-child(144), .users .user:nth-child(144) {
+      background-color: rgba(107, 131, 166, 0.2); }
+      .channels .channel:nth-child(144):focus, .channels .channel:nth-child(144):hover, .channels .user:nth-child(144):focus, .channels .user:nth-child(144):hover, .users .channel:nth-child(144):focus, .users .channel:nth-child(144):hover, .users .user:nth-child(144):focus, .users .user:nth-child(144):hover {
+        background-color: rgba(107, 131, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(145), .channels .user:nth-child(145), .users .channel:nth-child(145), .users .user:nth-child(145) {
+      background-color: rgba(247, 200, 8, 0.2); }
+      .channels .channel:nth-child(145):focus, .channels .channel:nth-child(145):hover, .channels .user:nth-child(145):focus, .channels .user:nth-child(145):hover, .users .channel:nth-child(145):focus, .users .channel:nth-child(145):hover, .users .user:nth-child(145):focus, .users .user:nth-child(145):hover {
+        background-color: rgba(247, 200, 8, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(146), .channels .user:nth-child(146), .users .channel:nth-child(146), .users .user:nth-child(146) {
+      background-color: rgba(53, 129, 165, 0.2); }
+      .channels .channel:nth-child(146):focus, .channels .channel:nth-child(146):hover, .channels .user:nth-child(146):focus, .channels .user:nth-child(146):hover, .users .channel:nth-child(146):focus, .users .channel:nth-child(146):hover, .users .user:nth-child(146):focus, .users .user:nth-child(146):hover {
+        background-color: rgba(53, 129, 165, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(147), .channels .user:nth-child(147), .users .channel:nth-child(147), .users .user:nth-child(147) {
+      background-color: rgba(95, 190, 190, 0.2); }
+      .channels .channel:nth-child(147):focus, .channels .channel:nth-child(147):hover, .channels .user:nth-child(147):focus, .channels .user:nth-child(147):hover, .users .channel:nth-child(147):focus, .users .channel:nth-child(147):hover, .users .user:nth-child(147):focus, .users .user:nth-child(147):hover {
+        background-color: rgba(95, 190, 190, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(148), .channels .user:nth-child(148), .users .channel:nth-child(148), .users .user:nth-child(148) {
+      background-color: rgba(152, 199, 154, 0.2); }
+      .channels .channel:nth-child(148):focus, .channels .channel:nth-child(148):hover, .channels .user:nth-child(148):focus, .channels .user:nth-child(148):hover, .users .channel:nth-child(148):focus, .users .channel:nth-child(148):hover, .users .user:nth-child(148):focus, .users .user:nth-child(148):hover {
+        background-color: rgba(152, 199, 154, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(149), .channels .user:nth-child(149), .users .channel:nth-child(149), .users .user:nth-child(149) {
+      background-color: rgba(210, 49, 93, 0.2); }
+      .channels .channel:nth-child(149):focus, .channels .channel:nth-child(149):hover, .channels .user:nth-child(149):focus, .channels .user:nth-child(149):hover, .users .channel:nth-child(149):focus, .users .channel:nth-child(149):hover, .users .user:nth-child(149):focus, .users .user:nth-child(149):hover {
+        background-color: rgba(210, 49, 93, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(150), .channels .user:nth-child(150), .users .channel:nth-child(150), .users .user:nth-child(150) {
+      background-color: rgba(167, 168, 145, 0.2); }
+      .channels .channel:nth-child(150):focus, .channels .channel:nth-child(150):hover, .channels .user:nth-child(150):focus, .channels .user:nth-child(150):hover, .users .channel:nth-child(150):focus, .users .channel:nth-child(150):hover, .users .user:nth-child(150):focus, .users .user:nth-child(150):hover {
+        background-color: rgba(167, 168, 145, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(151), .channels .user:nth-child(151), .users .channel:nth-child(151), .users .user:nth-child(151) {
+      background-color: rgba(56, 144, 144, 0.2); }
+      .channels .channel:nth-child(151):focus, .channels .channel:nth-child(151):hover, .channels .user:nth-child(151):focus, .channels .user:nth-child(151):hover, .users .channel:nth-child(151):focus, .users .channel:nth-child(151):hover, .users .user:nth-child(151):focus, .users .user:nth-child(151):hover {
+        background-color: rgba(56, 144, 144, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(152), .channels .user:nth-child(152), .users .channel:nth-child(152), .users .user:nth-child(152) {
+      background-color: rgba(244, 126, 125, 0.2); }
+      .channels .channel:nth-child(152):focus, .channels .channel:nth-child(152):hover, .channels .user:nth-child(152):focus, .channels .user:nth-child(152):hover, .users .channel:nth-child(152):focus, .users .channel:nth-child(152):hover, .users .user:nth-child(152):focus, .users .user:nth-child(152):hover {
+        background-color: rgba(244, 126, 125, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(153), .channels .user:nth-child(153), .users .channel:nth-child(153), .users .user:nth-child(153) {
+      background-color: rgba(181, 208, 69, 0.2); }
+      .channels .channel:nth-child(153):focus, .channels .channel:nth-child(153):hover, .channels .user:nth-child(153):focus, .channels .user:nth-child(153):hover, .users .channel:nth-child(153):focus, .users .channel:nth-child(153):hover, .users .user:nth-child(153):focus, .users .user:nth-child(153):hover {
+        background-color: rgba(181, 208, 69, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(154), .channels .user:nth-child(154), .users .channel:nth-child(154), .users .user:nth-child(154) {
+      background-color: rgba(251, 131, 53, 0.2); }
+      .channels .channel:nth-child(154):focus, .channels .channel:nth-child(154):hover, .channels .user:nth-child(154):focus, .channels .user:nth-child(154):hover, .users .channel:nth-child(154):focus, .users .channel:nth-child(154):hover, .users .user:nth-child(154):focus, .users .user:nth-child(154):hover {
+        background-color: rgba(251, 131, 53, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(155), .channels .user:nth-child(155), .users .channel:nth-child(155), .users .user:nth-child(155) {
+      background-color: rgba(129, 192, 197, 0.2); }
+      .channels .channel:nth-child(155):focus, .channels .channel:nth-child(155):hover, .channels .user:nth-child(155):focus, .channels .user:nth-child(155):hover, .users .channel:nth-child(155):focus, .users .channel:nth-child(155):hover, .users .user:nth-child(155):focus, .users .user:nth-child(155):hover {
+        background-color: rgba(129, 192, 197, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(156), .channels .user:nth-child(156), .users .channel:nth-child(156), .users .user:nth-child(156) {
+      background-color: rgba(233, 136, 19, 0.2); }
+      .channels .channel:nth-child(156):focus, .channels .channel:nth-child(156):hover, .channels .user:nth-child(156):focus, .channels .user:nth-child(156):hover, .users .channel:nth-child(156):focus, .users .channel:nth-child(156):hover, .users .user:nth-child(156):focus, .users .user:nth-child(156):hover {
+        background-color: rgba(233, 136, 19, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(157), .channels .user:nth-child(157), .users .channel:nth-child(157), .users .user:nth-child(157) {
+      background-color: rgba(34, 181, 191, 0.2); }
+      .channels .channel:nth-child(157):focus, .channels .channel:nth-child(157):hover, .channels .user:nth-child(157):focus, .channels .user:nth-child(157):hover, .users .channel:nth-child(157):focus, .users .channel:nth-child(157):hover, .users .user:nth-child(157):focus, .users .user:nth-child(157):hover {
+        background-color: rgba(34, 181, 191, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(158), .channels .user:nth-child(158), .users .channel:nth-child(158), .users .user:nth-child(158) {
+      background-color: rgba(135, 103, 166, 0.2); }
+      .channels .channel:nth-child(158):focus, .channels .channel:nth-child(158):hover, .channels .user:nth-child(158):focus, .channels .user:nth-child(158):hover, .users .channel:nth-child(158):focus, .users .channel:nth-child(158):hover, .users .user:nth-child(158):focus, .users .user:nth-child(158):hover {
+        background-color: rgba(135, 103, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(159), .channels .user:nth-child(159), .users .channel:nth-child(159), .users .user:nth-child(159) {
+      background-color: rgba(136, 193, 52, 0.2); }
+      .channels .channel:nth-child(159):focus, .channels .channel:nth-child(159):hover, .channels .user:nth-child(159):focus, .channels .user:nth-child(159):hover, .users .channel:nth-child(159):focus, .users .channel:nth-child(159):hover, .users .user:nth-child(159):focus, .users .user:nth-child(159):hover {
+        background-color: rgba(136, 193, 52, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(160), .channels .user:nth-child(160), .users .channel:nth-child(160), .users .user:nth-child(160) {
+      background-color: rgba(107, 131, 166, 0.2); }
+      .channels .channel:nth-child(160):focus, .channels .channel:nth-child(160):hover, .channels .user:nth-child(160):focus, .channels .user:nth-child(160):hover, .users .channel:nth-child(160):focus, .users .channel:nth-child(160):hover, .users .user:nth-child(160):focus, .users .user:nth-child(160):hover {
+        background-color: rgba(107, 131, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(161), .channels .user:nth-child(161), .users .channel:nth-child(161), .users .user:nth-child(161) {
+      background-color: rgba(247, 200, 8, 0.2); }
+      .channels .channel:nth-child(161):focus, .channels .channel:nth-child(161):hover, .channels .user:nth-child(161):focus, .channels .user:nth-child(161):hover, .users .channel:nth-child(161):focus, .users .channel:nth-child(161):hover, .users .user:nth-child(161):focus, .users .user:nth-child(161):hover {
+        background-color: rgba(247, 200, 8, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(162), .channels .user:nth-child(162), .users .channel:nth-child(162), .users .user:nth-child(162) {
+      background-color: rgba(53, 129, 165, 0.2); }
+      .channels .channel:nth-child(162):focus, .channels .channel:nth-child(162):hover, .channels .user:nth-child(162):focus, .channels .user:nth-child(162):hover, .users .channel:nth-child(162):focus, .users .channel:nth-child(162):hover, .users .user:nth-child(162):focus, .users .user:nth-child(162):hover {
+        background-color: rgba(53, 129, 165, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(163), .channels .user:nth-child(163), .users .channel:nth-child(163), .users .user:nth-child(163) {
+      background-color: rgba(95, 190, 190, 0.2); }
+      .channels .channel:nth-child(163):focus, .channels .channel:nth-child(163):hover, .channels .user:nth-child(163):focus, .channels .user:nth-child(163):hover, .users .channel:nth-child(163):focus, .users .channel:nth-child(163):hover, .users .user:nth-child(163):focus, .users .user:nth-child(163):hover {
+        background-color: rgba(95, 190, 190, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(164), .channels .user:nth-child(164), .users .channel:nth-child(164), .users .user:nth-child(164) {
+      background-color: rgba(152, 199, 154, 0.2); }
+      .channels .channel:nth-child(164):focus, .channels .channel:nth-child(164):hover, .channels .user:nth-child(164):focus, .channels .user:nth-child(164):hover, .users .channel:nth-child(164):focus, .users .channel:nth-child(164):hover, .users .user:nth-child(164):focus, .users .user:nth-child(164):hover {
+        background-color: rgba(152, 199, 154, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(165), .channels .user:nth-child(165), .users .channel:nth-child(165), .users .user:nth-child(165) {
+      background-color: rgba(210, 49, 93, 0.2); }
+      .channels .channel:nth-child(165):focus, .channels .channel:nth-child(165):hover, .channels .user:nth-child(165):focus, .channels .user:nth-child(165):hover, .users .channel:nth-child(165):focus, .users .channel:nth-child(165):hover, .users .user:nth-child(165):focus, .users .user:nth-child(165):hover {
+        background-color: rgba(210, 49, 93, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(166), .channels .user:nth-child(166), .users .channel:nth-child(166), .users .user:nth-child(166) {
+      background-color: rgba(167, 168, 145, 0.2); }
+      .channels .channel:nth-child(166):focus, .channels .channel:nth-child(166):hover, .channels .user:nth-child(166):focus, .channels .user:nth-child(166):hover, .users .channel:nth-child(166):focus, .users .channel:nth-child(166):hover, .users .user:nth-child(166):focus, .users .user:nth-child(166):hover {
+        background-color: rgba(167, 168, 145, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(167), .channels .user:nth-child(167), .users .channel:nth-child(167), .users .user:nth-child(167) {
+      background-color: rgba(56, 144, 144, 0.2); }
+      .channels .channel:nth-child(167):focus, .channels .channel:nth-child(167):hover, .channels .user:nth-child(167):focus, .channels .user:nth-child(167):hover, .users .channel:nth-child(167):focus, .users .channel:nth-child(167):hover, .users .user:nth-child(167):focus, .users .user:nth-child(167):hover {
+        background-color: rgba(56, 144, 144, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(168), .channels .user:nth-child(168), .users .channel:nth-child(168), .users .user:nth-child(168) {
+      background-color: rgba(244, 126, 125, 0.2); }
+      .channels .channel:nth-child(168):focus, .channels .channel:nth-child(168):hover, .channels .user:nth-child(168):focus, .channels .user:nth-child(168):hover, .users .channel:nth-child(168):focus, .users .channel:nth-child(168):hover, .users .user:nth-child(168):focus, .users .user:nth-child(168):hover {
+        background-color: rgba(244, 126, 125, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(169), .channels .user:nth-child(169), .users .channel:nth-child(169), .users .user:nth-child(169) {
+      background-color: rgba(181, 208, 69, 0.2); }
+      .channels .channel:nth-child(169):focus, .channels .channel:nth-child(169):hover, .channels .user:nth-child(169):focus, .channels .user:nth-child(169):hover, .users .channel:nth-child(169):focus, .users .channel:nth-child(169):hover, .users .user:nth-child(169):focus, .users .user:nth-child(169):hover {
+        background-color: rgba(181, 208, 69, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(170), .channels .user:nth-child(170), .users .channel:nth-child(170), .users .user:nth-child(170) {
+      background-color: rgba(251, 131, 53, 0.2); }
+      .channels .channel:nth-child(170):focus, .channels .channel:nth-child(170):hover, .channels .user:nth-child(170):focus, .channels .user:nth-child(170):hover, .users .channel:nth-child(170):focus, .users .channel:nth-child(170):hover, .users .user:nth-child(170):focus, .users .user:nth-child(170):hover {
+        background-color: rgba(251, 131, 53, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(171), .channels .user:nth-child(171), .users .channel:nth-child(171), .users .user:nth-child(171) {
+      background-color: rgba(129, 192, 197, 0.2); }
+      .channels .channel:nth-child(171):focus, .channels .channel:nth-child(171):hover, .channels .user:nth-child(171):focus, .channels .user:nth-child(171):hover, .users .channel:nth-child(171):focus, .users .channel:nth-child(171):hover, .users .user:nth-child(171):focus, .users .user:nth-child(171):hover {
+        background-color: rgba(129, 192, 197, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(172), .channels .user:nth-child(172), .users .channel:nth-child(172), .users .user:nth-child(172) {
+      background-color: rgba(233, 136, 19, 0.2); }
+      .channels .channel:nth-child(172):focus, .channels .channel:nth-child(172):hover, .channels .user:nth-child(172):focus, .channels .user:nth-child(172):hover, .users .channel:nth-child(172):focus, .users .channel:nth-child(172):hover, .users .user:nth-child(172):focus, .users .user:nth-child(172):hover {
+        background-color: rgba(233, 136, 19, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(173), .channels .user:nth-child(173), .users .channel:nth-child(173), .users .user:nth-child(173) {
+      background-color: rgba(34, 181, 191, 0.2); }
+      .channels .channel:nth-child(173):focus, .channels .channel:nth-child(173):hover, .channels .user:nth-child(173):focus, .channels .user:nth-child(173):hover, .users .channel:nth-child(173):focus, .users .channel:nth-child(173):hover, .users .user:nth-child(173):focus, .users .user:nth-child(173):hover {
+        background-color: rgba(34, 181, 191, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(174), .channels .user:nth-child(174), .users .channel:nth-child(174), .users .user:nth-child(174) {
+      background-color: rgba(135, 103, 166, 0.2); }
+      .channels .channel:nth-child(174):focus, .channels .channel:nth-child(174):hover, .channels .user:nth-child(174):focus, .channels .user:nth-child(174):hover, .users .channel:nth-child(174):focus, .users .channel:nth-child(174):hover, .users .user:nth-child(174):focus, .users .user:nth-child(174):hover {
+        background-color: rgba(135, 103, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(175), .channels .user:nth-child(175), .users .channel:nth-child(175), .users .user:nth-child(175) {
+      background-color: rgba(136, 193, 52, 0.2); }
+      .channels .channel:nth-child(175):focus, .channels .channel:nth-child(175):hover, .channels .user:nth-child(175):focus, .channels .user:nth-child(175):hover, .users .channel:nth-child(175):focus, .users .channel:nth-child(175):hover, .users .user:nth-child(175):focus, .users .user:nth-child(175):hover {
+        background-color: rgba(136, 193, 52, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(176), .channels .user:nth-child(176), .users .channel:nth-child(176), .users .user:nth-child(176) {
+      background-color: rgba(107, 131, 166, 0.2); }
+      .channels .channel:nth-child(176):focus, .channels .channel:nth-child(176):hover, .channels .user:nth-child(176):focus, .channels .user:nth-child(176):hover, .users .channel:nth-child(176):focus, .users .channel:nth-child(176):hover, .users .user:nth-child(176):focus, .users .user:nth-child(176):hover {
+        background-color: rgba(107, 131, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(177), .channels .user:nth-child(177), .users .channel:nth-child(177), .users .user:nth-child(177) {
+      background-color: rgba(247, 200, 8, 0.2); }
+      .channels .channel:nth-child(177):focus, .channels .channel:nth-child(177):hover, .channels .user:nth-child(177):focus, .channels .user:nth-child(177):hover, .users .channel:nth-child(177):focus, .users .channel:nth-child(177):hover, .users .user:nth-child(177):focus, .users .user:nth-child(177):hover {
+        background-color: rgba(247, 200, 8, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(178), .channels .user:nth-child(178), .users .channel:nth-child(178), .users .user:nth-child(178) {
+      background-color: rgba(53, 129, 165, 0.2); }
+      .channels .channel:nth-child(178):focus, .channels .channel:nth-child(178):hover, .channels .user:nth-child(178):focus, .channels .user:nth-child(178):hover, .users .channel:nth-child(178):focus, .users .channel:nth-child(178):hover, .users .user:nth-child(178):focus, .users .user:nth-child(178):hover {
+        background-color: rgba(53, 129, 165, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(179), .channels .user:nth-child(179), .users .channel:nth-child(179), .users .user:nth-child(179) {
+      background-color: rgba(95, 190, 190, 0.2); }
+      .channels .channel:nth-child(179):focus, .channels .channel:nth-child(179):hover, .channels .user:nth-child(179):focus, .channels .user:nth-child(179):hover, .users .channel:nth-child(179):focus, .users .channel:nth-child(179):hover, .users .user:nth-child(179):focus, .users .user:nth-child(179):hover {
+        background-color: rgba(95, 190, 190, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(180), .channels .user:nth-child(180), .users .channel:nth-child(180), .users .user:nth-child(180) {
+      background-color: rgba(152, 199, 154, 0.2); }
+      .channels .channel:nth-child(180):focus, .channels .channel:nth-child(180):hover, .channels .user:nth-child(180):focus, .channels .user:nth-child(180):hover, .users .channel:nth-child(180):focus, .users .channel:nth-child(180):hover, .users .user:nth-child(180):focus, .users .user:nth-child(180):hover {
+        background-color: rgba(152, 199, 154, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(181), .channels .user:nth-child(181), .users .channel:nth-child(181), .users .user:nth-child(181) {
+      background-color: rgba(210, 49, 93, 0.2); }
+      .channels .channel:nth-child(181):focus, .channels .channel:nth-child(181):hover, .channels .user:nth-child(181):focus, .channels .user:nth-child(181):hover, .users .channel:nth-child(181):focus, .users .channel:nth-child(181):hover, .users .user:nth-child(181):focus, .users .user:nth-child(181):hover {
+        background-color: rgba(210, 49, 93, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(182), .channels .user:nth-child(182), .users .channel:nth-child(182), .users .user:nth-child(182) {
+      background-color: rgba(167, 168, 145, 0.2); }
+      .channels .channel:nth-child(182):focus, .channels .channel:nth-child(182):hover, .channels .user:nth-child(182):focus, .channels .user:nth-child(182):hover, .users .channel:nth-child(182):focus, .users .channel:nth-child(182):hover, .users .user:nth-child(182):focus, .users .user:nth-child(182):hover {
+        background-color: rgba(167, 168, 145, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(183), .channels .user:nth-child(183), .users .channel:nth-child(183), .users .user:nth-child(183) {
+      background-color: rgba(56, 144, 144, 0.2); }
+      .channels .channel:nth-child(183):focus, .channels .channel:nth-child(183):hover, .channels .user:nth-child(183):focus, .channels .user:nth-child(183):hover, .users .channel:nth-child(183):focus, .users .channel:nth-child(183):hover, .users .user:nth-child(183):focus, .users .user:nth-child(183):hover {
+        background-color: rgba(56, 144, 144, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(184), .channels .user:nth-child(184), .users .channel:nth-child(184), .users .user:nth-child(184) {
+      background-color: rgba(244, 126, 125, 0.2); }
+      .channels .channel:nth-child(184):focus, .channels .channel:nth-child(184):hover, .channels .user:nth-child(184):focus, .channels .user:nth-child(184):hover, .users .channel:nth-child(184):focus, .users .channel:nth-child(184):hover, .users .user:nth-child(184):focus, .users .user:nth-child(184):hover {
+        background-color: rgba(244, 126, 125, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(185), .channels .user:nth-child(185), .users .channel:nth-child(185), .users .user:nth-child(185) {
+      background-color: rgba(181, 208, 69, 0.2); }
+      .channels .channel:nth-child(185):focus, .channels .channel:nth-child(185):hover, .channels .user:nth-child(185):focus, .channels .user:nth-child(185):hover, .users .channel:nth-child(185):focus, .users .channel:nth-child(185):hover, .users .user:nth-child(185):focus, .users .user:nth-child(185):hover {
+        background-color: rgba(181, 208, 69, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(186), .channels .user:nth-child(186), .users .channel:nth-child(186), .users .user:nth-child(186) {
+      background-color: rgba(251, 131, 53, 0.2); }
+      .channels .channel:nth-child(186):focus, .channels .channel:nth-child(186):hover, .channels .user:nth-child(186):focus, .channels .user:nth-child(186):hover, .users .channel:nth-child(186):focus, .users .channel:nth-child(186):hover, .users .user:nth-child(186):focus, .users .user:nth-child(186):hover {
+        background-color: rgba(251, 131, 53, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(187), .channels .user:nth-child(187), .users .channel:nth-child(187), .users .user:nth-child(187) {
+      background-color: rgba(129, 192, 197, 0.2); }
+      .channels .channel:nth-child(187):focus, .channels .channel:nth-child(187):hover, .channels .user:nth-child(187):focus, .channels .user:nth-child(187):hover, .users .channel:nth-child(187):focus, .users .channel:nth-child(187):hover, .users .user:nth-child(187):focus, .users .user:nth-child(187):hover {
+        background-color: rgba(129, 192, 197, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(188), .channels .user:nth-child(188), .users .channel:nth-child(188), .users .user:nth-child(188) {
+      background-color: rgba(233, 136, 19, 0.2); }
+      .channels .channel:nth-child(188):focus, .channels .channel:nth-child(188):hover, .channels .user:nth-child(188):focus, .channels .user:nth-child(188):hover, .users .channel:nth-child(188):focus, .users .channel:nth-child(188):hover, .users .user:nth-child(188):focus, .users .user:nth-child(188):hover {
+        background-color: rgba(233, 136, 19, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(189), .channels .user:nth-child(189), .users .channel:nth-child(189), .users .user:nth-child(189) {
+      background-color: rgba(34, 181, 191, 0.2); }
+      .channels .channel:nth-child(189):focus, .channels .channel:nth-child(189):hover, .channels .user:nth-child(189):focus, .channels .user:nth-child(189):hover, .users .channel:nth-child(189):focus, .users .channel:nth-child(189):hover, .users .user:nth-child(189):focus, .users .user:nth-child(189):hover {
+        background-color: rgba(34, 181, 191, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(190), .channels .user:nth-child(190), .users .channel:nth-child(190), .users .user:nth-child(190) {
+      background-color: rgba(135, 103, 166, 0.2); }
+      .channels .channel:nth-child(190):focus, .channels .channel:nth-child(190):hover, .channels .user:nth-child(190):focus, .channels .user:nth-child(190):hover, .users .channel:nth-child(190):focus, .users .channel:nth-child(190):hover, .users .user:nth-child(190):focus, .users .user:nth-child(190):hover {
+        background-color: rgba(135, 103, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(191), .channels .user:nth-child(191), .users .channel:nth-child(191), .users .user:nth-child(191) {
+      background-color: rgba(136, 193, 52, 0.2); }
+      .channels .channel:nth-child(191):focus, .channels .channel:nth-child(191):hover, .channels .user:nth-child(191):focus, .channels .user:nth-child(191):hover, .users .channel:nth-child(191):focus, .users .channel:nth-child(191):hover, .users .user:nth-child(191):focus, .users .user:nth-child(191):hover {
+        background-color: rgba(136, 193, 52, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(192), .channels .user:nth-child(192), .users .channel:nth-child(192), .users .user:nth-child(192) {
+      background-color: rgba(107, 131, 166, 0.2); }
+      .channels .channel:nth-child(192):focus, .channels .channel:nth-child(192):hover, .channels .user:nth-child(192):focus, .channels .user:nth-child(192):hover, .users .channel:nth-child(192):focus, .users .channel:nth-child(192):hover, .users .user:nth-child(192):focus, .users .user:nth-child(192):hover {
+        background-color: rgba(107, 131, 166, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(193), .channels .user:nth-child(193), .users .channel:nth-child(193), .users .user:nth-child(193) {
+      background-color: rgba(247, 200, 8, 0.2); }
+      .channels .channel:nth-child(193):focus, .channels .channel:nth-child(193):hover, .channels .user:nth-child(193):focus, .channels .user:nth-child(193):hover, .users .channel:nth-child(193):focus, .users .channel:nth-child(193):hover, .users .user:nth-child(193):focus, .users .user:nth-child(193):hover {
+        background-color: rgba(247, 200, 8, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(194), .channels .user:nth-child(194), .users .channel:nth-child(194), .users .user:nth-child(194) {
+      background-color: rgba(53, 129, 165, 0.2); }
+      .channels .channel:nth-child(194):focus, .channels .channel:nth-child(194):hover, .channels .user:nth-child(194):focus, .channels .user:nth-child(194):hover, .users .channel:nth-child(194):focus, .users .channel:nth-child(194):hover, .users .user:nth-child(194):focus, .users .user:nth-child(194):hover {
+        background-color: rgba(53, 129, 165, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(195), .channels .user:nth-child(195), .users .channel:nth-child(195), .users .user:nth-child(195) {
+      background-color: rgba(95, 190, 190, 0.2); }
+      .channels .channel:nth-child(195):focus, .channels .channel:nth-child(195):hover, .channels .user:nth-child(195):focus, .channels .user:nth-child(195):hover, .users .channel:nth-child(195):focus, .users .channel:nth-child(195):hover, .users .user:nth-child(195):focus, .users .user:nth-child(195):hover {
+        background-color: rgba(95, 190, 190, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(196), .channels .user:nth-child(196), .users .channel:nth-child(196), .users .user:nth-child(196) {
+      background-color: rgba(152, 199, 154, 0.2); }
+      .channels .channel:nth-child(196):focus, .channels .channel:nth-child(196):hover, .channels .user:nth-child(196):focus, .channels .user:nth-child(196):hover, .users .channel:nth-child(196):focus, .users .channel:nth-child(196):hover, .users .user:nth-child(196):focus, .users .user:nth-child(196):hover {
+        background-color: rgba(152, 199, 154, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(197), .channels .user:nth-child(197), .users .channel:nth-child(197), .users .user:nth-child(197) {
+      background-color: rgba(210, 49, 93, 0.2); }
+      .channels .channel:nth-child(197):focus, .channels .channel:nth-child(197):hover, .channels .user:nth-child(197):focus, .channels .user:nth-child(197):hover, .users .channel:nth-child(197):focus, .users .channel:nth-child(197):hover, .users .user:nth-child(197):focus, .users .user:nth-child(197):hover {
+        background-color: rgba(210, 49, 93, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(198), .channels .user:nth-child(198), .users .channel:nth-child(198), .users .user:nth-child(198) {
+      background-color: rgba(167, 168, 145, 0.2); }
+      .channels .channel:nth-child(198):focus, .channels .channel:nth-child(198):hover, .channels .user:nth-child(198):focus, .channels .user:nth-child(198):hover, .users .channel:nth-child(198):focus, .users .channel:nth-child(198):hover, .users .user:nth-child(198):focus, .users .user:nth-child(198):hover {
+        background-color: rgba(167, 168, 145, 0.6);
+        min-width: 150px;
+        color: black; }
+    .channels .channel:nth-child(199), .channels .user:nth-child(199), .users .channel:nth-child(199), .users .user:nth-child(199) {
+      background-color: rgba(56, 144, 144, 0.2); }
+      .channels .channel:nth-child(199):focus, .channels .channel:nth-child(199):hover, .channels .user:nth-child(199):focus, .channels .user:nth-child(199):hover, .users .channel:nth-child(199):focus, .users .channel:nth-child(199):hover, .users .user:nth-child(199):focus, .users .user:nth-child(199):hover {
+        background-color: rgba(56, 144, 144, 0.6);
+        min-width: 150px;
+        color: black; }
+
+.filters-menu {
+  flex-grow: 0;
+  flex-shrink: 0;
+  background-color: #333;
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap; }
+  .filters-menu li {
+    height: 50px; }
+  .filters-menu select {
+    background: #333;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+    display: table-cell;
+    width: 50%;
+    height: 25px; }
+    .filters-menu select option {
+      width: 100px;
+      color: rgba(255, 255, 255, 0.7); }
+    .filters-menu select:hover, .filters-menu select:focus {
+      color: #2098d1; }
+  .filters-menu input {
+    display: table-cell;
+    width: 50%;
+    height: 25px;
+    background: #333;
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.7); }
+    .filters-menu input:hover, .filters-menu input:focus {
+      color: #2098d1; }
+      .filters-menu input:hover::-webkit-input-placeholder, .filters-menu input:focus::-webkit-input-placeholder {
+        color: #2098d1; }
+      .filters-menu input:hover::-moz-placeholder, .filters-menu input:focus::-moz-placeholder {
+        color: #2098d1; }
+      .filters-menu input:hover:-moz-placeholder, .filters-menu input:focus:-moz-placeholder {
+        color: #2098d1; }
+      .filters-menu input:hover:-ms-input-placeholder, .filters-menu input:focus:-ms-input-placeholder {
+        color: #2098d1; }
+  .filters-menu ul {
+    display: inline-block; }
+    .filters-menu ul li {
+      display: table-cell;
+      width: 33.33333%;
+      height: 25px; }
+    .filters-menu ul .first-line {
+      position: relative;
+      top: -25px; }
+    .filters-menu ul .second-line {
+      position: relative;
+      left: -50%; }
+  .filters-menu .design {
+    font-size: 2em;
+    line-height: 50px;
+    float: right;
+    padding: 0 10px;
+    cursor: pointer;
+    vertical-align: middle; }
+    .filters-menu .design:hover, .filters-menu .design.active {
+      color: #2098d1; }
+
+.menu-button {
+  width: 36px;
+  height: 36px;
+  outline: none;
+  position: fixed;
+  margin: 5px;
+  padding: 0px;
+  z-index: 999996;
+  border: 2px solid #2098d1;
+  border-radius: 50%;
+  box-sizing: content-box;
+  background: none; }
+  .menu-button:hover, .menu-button:focus {
+    border: 3px solid #42aee2;
+    margin: 4px; }
+    .menu-button:hover i, .menu-button:focus i {
+      color: #42aee2; }
+  .menu-button i {
+    font-size: 21px;
+    color: #2098d1; }
+
+.pagination {
+  margin: 1em;
+  text-align: center; }
+  .pagination ul {
+    display: inline;
+    text-align: center; }
+    .pagination ul li {
+      display: inline; }
+    .pagination ul ul li {
+      display: none;
+      media: 53.75em;
+        media-display: inline; }
+      .pagination ul ul li:nth-child(1), .pagination ul ul li:nth-child(2), .pagination ul ul li:nth-child(3) {
+        display: inline; }
+    .pagination ul li a {
+      transition: all 0.2s ease-in-out;
+      background: #f6f6f6;
+      border-radius: 3px;
+      border: 1px solid gainsboro;
+      color: #333;
+      outline: none;
+      padding: 0.375em 0.809em; }
+      .pagination ul li a:hover, .pagination ul li a:focus {
+        background: white;
+        color: #477DCA; }
+    .pagination ul a.current {
+      background: white; }
+
+.preload {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 9999;
+  background: url("/assets/images/Nightiies.png") no-repeat center center;
+  background-size: 50vh; }
+  .preload .everything {
+    opacity: 0; }
+
+.tracks-colorGrid {
+  width: 100%;
+  margin-right: calc(100% - 100Vw);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: stretch;
+  align-items: stretch; }
+  .tracks-colorGrid p {
+    line-height: 1.5em; }
+  .tracks-colorGrid a {
+    text-decoration: none; }
+  .tracks-colorGrid .grid-item {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 500px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background: #6b83a6;
+    margin: 2px;
+    cursor: pointer;
+    padding: 2em; }
+    .tracks-colorGrid .grid-item:nth-child(1) {
+      background-color: rgba(53, 129, 165, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(1):focus, .tracks-colorGrid .grid-item:nth-child(1):hover, .tracks-colorGrid .grid-item:nth-child(1).active {
+        background-color: rgba(53, 129, 165, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(2) {
+      background-color: rgba(247, 200, 8, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(2):focus, .tracks-colorGrid .grid-item:nth-child(2):hover, .tracks-colorGrid .grid-item:nth-child(2).active {
+        background-color: rgba(247, 200, 8, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(3) {
+      background-color: rgba(95, 190, 190, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(3):focus, .tracks-colorGrid .grid-item:nth-child(3):hover, .tracks-colorGrid .grid-item:nth-child(3).active {
+        background-color: rgba(95, 190, 190, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(4) {
+      background-color: rgba(152, 199, 154, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(4):focus, .tracks-colorGrid .grid-item:nth-child(4):hover, .tracks-colorGrid .grid-item:nth-child(4).active {
+        background-color: rgba(152, 199, 154, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(5) {
+      background-color: rgba(210, 49, 93, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(5):focus, .tracks-colorGrid .grid-item:nth-child(5):hover, .tracks-colorGrid .grid-item:nth-child(5).active {
+        background-color: rgba(210, 49, 93, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(6) {
+      background-color: rgba(167, 168, 145, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(6):focus, .tracks-colorGrid .grid-item:nth-child(6):hover, .tracks-colorGrid .grid-item:nth-child(6).active {
+        background-color: rgba(167, 168, 145, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(7) {
+      background-color: rgba(56, 144, 144, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(7):focus, .tracks-colorGrid .grid-item:nth-child(7):hover, .tracks-colorGrid .grid-item:nth-child(7).active {
+        background-color: rgba(56, 144, 144, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(8) {
+      background-color: rgba(244, 126, 125, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(8):focus, .tracks-colorGrid .grid-item:nth-child(8):hover, .tracks-colorGrid .grid-item:nth-child(8).active {
+        background-color: rgba(244, 126, 125, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(9) {
+      background-color: rgba(181, 208, 69, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(9):focus, .tracks-colorGrid .grid-item:nth-child(9):hover, .tracks-colorGrid .grid-item:nth-child(9).active {
+        background-color: rgba(181, 208, 69, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(10) {
+      background-color: rgba(251, 131, 53, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(10):focus, .tracks-colorGrid .grid-item:nth-child(10):hover, .tracks-colorGrid .grid-item:nth-child(10).active {
+        background-color: rgba(251, 131, 53, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(11) {
+      background-color: rgba(129, 192, 197, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(11):focus, .tracks-colorGrid .grid-item:nth-child(11):hover, .tracks-colorGrid .grid-item:nth-child(11).active {
+        background-color: rgba(129, 192, 197, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(12) {
+      background-color: rgba(233, 136, 19, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(12):focus, .tracks-colorGrid .grid-item:nth-child(12):hover, .tracks-colorGrid .grid-item:nth-child(12).active {
+        background-color: rgba(233, 136, 19, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(13) {
+      background-color: rgba(34, 181, 191, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(13):focus, .tracks-colorGrid .grid-item:nth-child(13):hover, .tracks-colorGrid .grid-item:nth-child(13).active {
+        background-color: rgba(34, 181, 191, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(14) {
+      background-color: rgba(135, 103, 166, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(14):focus, .tracks-colorGrid .grid-item:nth-child(14):hover, .tracks-colorGrid .grid-item:nth-child(14).active {
+        background-color: rgba(135, 103, 166, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(15) {
+      background-color: rgba(136, 193, 52, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(15):focus, .tracks-colorGrid .grid-item:nth-child(15):hover, .tracks-colorGrid .grid-item:nth-child(15).active {
+        background-color: rgba(136, 193, 52, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(16) {
+      background-color: rgba(107, 131, 166, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(16):focus, .tracks-colorGrid .grid-item:nth-child(16):hover, .tracks-colorGrid .grid-item:nth-child(16).active {
+        background-color: rgba(107, 131, 166, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(17) {
+      background-color: rgba(53, 129, 165, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(17):focus, .tracks-colorGrid .grid-item:nth-child(17):hover, .tracks-colorGrid .grid-item:nth-child(17).active {
+        background-color: rgba(53, 129, 165, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(18) {
+      background-color: rgba(247, 200, 8, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(18):focus, .tracks-colorGrid .grid-item:nth-child(18):hover, .tracks-colorGrid .grid-item:nth-child(18).active {
+        background-color: rgba(247, 200, 8, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(19) {
+      background-color: rgba(95, 190, 190, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(19):focus, .tracks-colorGrid .grid-item:nth-child(19):hover, .tracks-colorGrid .grid-item:nth-child(19).active {
+        background-color: rgba(95, 190, 190, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(20) {
+      background-color: rgba(152, 199, 154, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(20):focus, .tracks-colorGrid .grid-item:nth-child(20):hover, .tracks-colorGrid .grid-item:nth-child(20).active {
+        background-color: rgba(152, 199, 154, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(21) {
+      background-color: rgba(210, 49, 93, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(21):focus, .tracks-colorGrid .grid-item:nth-child(21):hover, .tracks-colorGrid .grid-item:nth-child(21).active {
+        background-color: rgba(210, 49, 93, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(22) {
+      background-color: rgba(167, 168, 145, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(22):focus, .tracks-colorGrid .grid-item:nth-child(22):hover, .tracks-colorGrid .grid-item:nth-child(22).active {
+        background-color: rgba(167, 168, 145, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(23) {
+      background-color: rgba(56, 144, 144, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(23):focus, .tracks-colorGrid .grid-item:nth-child(23):hover, .tracks-colorGrid .grid-item:nth-child(23).active {
+        background-color: rgba(56, 144, 144, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(24) {
+      background-color: rgba(244, 126, 125, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(24):focus, .tracks-colorGrid .grid-item:nth-child(24):hover, .tracks-colorGrid .grid-item:nth-child(24).active {
+        background-color: rgba(244, 126, 125, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(25) {
+      background-color: rgba(181, 208, 69, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(25):focus, .tracks-colorGrid .grid-item:nth-child(25):hover, .tracks-colorGrid .grid-item:nth-child(25).active {
+        background-color: rgba(181, 208, 69, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(26) {
+      background-color: rgba(251, 131, 53, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(26):focus, .tracks-colorGrid .grid-item:nth-child(26):hover, .tracks-colorGrid .grid-item:nth-child(26).active {
+        background-color: rgba(251, 131, 53, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(27) {
+      background-color: rgba(129, 192, 197, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(27):focus, .tracks-colorGrid .grid-item:nth-child(27):hover, .tracks-colorGrid .grid-item:nth-child(27).active {
+        background-color: rgba(129, 192, 197, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(28) {
+      background-color: rgba(233, 136, 19, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(28):focus, .tracks-colorGrid .grid-item:nth-child(28):hover, .tracks-colorGrid .grid-item:nth-child(28).active {
+        background-color: rgba(233, 136, 19, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(29) {
+      background-color: rgba(34, 181, 191, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(29):focus, .tracks-colorGrid .grid-item:nth-child(29):hover, .tracks-colorGrid .grid-item:nth-child(29).active {
+        background-color: rgba(34, 181, 191, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(30) {
+      background-color: rgba(135, 103, 166, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(30):focus, .tracks-colorGrid .grid-item:nth-child(30):hover, .tracks-colorGrid .grid-item:nth-child(30).active {
+        background-color: rgba(135, 103, 166, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(31) {
+      background-color: rgba(136, 193, 52, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(31):focus, .tracks-colorGrid .grid-item:nth-child(31):hover, .tracks-colorGrid .grid-item:nth-child(31).active {
+        background-color: rgba(136, 193, 52, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(32) {
+      background-color: rgba(107, 131, 166, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(32):focus, .tracks-colorGrid .grid-item:nth-child(32):hover, .tracks-colorGrid .grid-item:nth-child(32).active {
+        background-color: rgba(107, 131, 166, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(33) {
+      background-color: rgba(53, 129, 165, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(33):focus, .tracks-colorGrid .grid-item:nth-child(33):hover, .tracks-colorGrid .grid-item:nth-child(33).active {
+        background-color: rgba(53, 129, 165, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(34) {
+      background-color: rgba(247, 200, 8, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(34):focus, .tracks-colorGrid .grid-item:nth-child(34):hover, .tracks-colorGrid .grid-item:nth-child(34).active {
+        background-color: rgba(247, 200, 8, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(35) {
+      background-color: rgba(95, 190, 190, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(35):focus, .tracks-colorGrid .grid-item:nth-child(35):hover, .tracks-colorGrid .grid-item:nth-child(35).active {
+        background-color: rgba(95, 190, 190, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(36) {
+      background-color: rgba(152, 199, 154, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(36):focus, .tracks-colorGrid .grid-item:nth-child(36):hover, .tracks-colorGrid .grid-item:nth-child(36).active {
+        background-color: rgba(152, 199, 154, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(37) {
+      background-color: rgba(210, 49, 93, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(37):focus, .tracks-colorGrid .grid-item:nth-child(37):hover, .tracks-colorGrid .grid-item:nth-child(37).active {
+        background-color: rgba(210, 49, 93, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(38) {
+      background-color: rgba(167, 168, 145, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(38):focus, .tracks-colorGrid .grid-item:nth-child(38):hover, .tracks-colorGrid .grid-item:nth-child(38).active {
+        background-color: rgba(167, 168, 145, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(39) {
+      background-color: rgba(56, 144, 144, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(39):focus, .tracks-colorGrid .grid-item:nth-child(39):hover, .tracks-colorGrid .grid-item:nth-child(39).active {
+        background-color: rgba(56, 144, 144, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(40) {
+      background-color: rgba(244, 126, 125, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(40):focus, .tracks-colorGrid .grid-item:nth-child(40):hover, .tracks-colorGrid .grid-item:nth-child(40).active {
+        background-color: rgba(244, 126, 125, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(41) {
+      background-color: rgba(181, 208, 69, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(41):focus, .tracks-colorGrid .grid-item:nth-child(41):hover, .tracks-colorGrid .grid-item:nth-child(41).active {
+        background-color: rgba(181, 208, 69, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(42) {
+      background-color: rgba(251, 131, 53, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(42):focus, .tracks-colorGrid .grid-item:nth-child(42):hover, .tracks-colorGrid .grid-item:nth-child(42).active {
+        background-color: rgba(251, 131, 53, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(43) {
+      background-color: rgba(129, 192, 197, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(43):focus, .tracks-colorGrid .grid-item:nth-child(43):hover, .tracks-colorGrid .grid-item:nth-child(43).active {
+        background-color: rgba(129, 192, 197, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(44) {
+      background-color: rgba(233, 136, 19, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(44):focus, .tracks-colorGrid .grid-item:nth-child(44):hover, .tracks-colorGrid .grid-item:nth-child(44).active {
+        background-color: rgba(233, 136, 19, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(45) {
+      background-color: rgba(34, 181, 191, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(45):focus, .tracks-colorGrid .grid-item:nth-child(45):hover, .tracks-colorGrid .grid-item:nth-child(45).active {
+        background-color: rgba(34, 181, 191, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(46) {
+      background-color: rgba(135, 103, 166, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(46):focus, .tracks-colorGrid .grid-item:nth-child(46):hover, .tracks-colorGrid .grid-item:nth-child(46).active {
+        background-color: rgba(135, 103, 166, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(47) {
+      background-color: rgba(136, 193, 52, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(47):focus, .tracks-colorGrid .grid-item:nth-child(47):hover, .tracks-colorGrid .grid-item:nth-child(47).active {
+        background-color: rgba(136, 193, 52, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(48) {
+      background-color: rgba(107, 131, 166, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(48):focus, .tracks-colorGrid .grid-item:nth-child(48):hover, .tracks-colorGrid .grid-item:nth-child(48).active {
+        background-color: rgba(107, 131, 166, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(49) {
+      background-color: rgba(53, 129, 165, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(49):focus, .tracks-colorGrid .grid-item:nth-child(49):hover, .tracks-colorGrid .grid-item:nth-child(49).active {
+        background-color: rgba(53, 129, 165, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(50) {
+      background-color: rgba(247, 200, 8, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(50):focus, .tracks-colorGrid .grid-item:nth-child(50):hover, .tracks-colorGrid .grid-item:nth-child(50).active {
+        background-color: rgba(247, 200, 8, 0.6); }
+    .tracks-colorGrid .grid-item:nth-child(51) {
+      background-color: rgba(95, 190, 190, 0.2); }
+      .tracks-colorGrid .grid-item:nth-child(51):focus, .tracks-colorGrid .grid-item:nth-child(51):hover, .tracks-colorGrid .grid-item:nth-child(51).active {
+        background-color: rgba(95, 190, 190, 0.6); }
+  .tracks-colorGrid .grid-item p {
+    margin: auto;
+    color: #595959; }
+  .tracks-colorGrid span.track_author {
+    float: left; }
+  .tracks-colorGrid span.track_channel {
+    float: right; }
+  .tracks-colorGrid span.track_name {
+    font-size: 1.1em;
+    color: black; }
+  .tracks-colorGrid .pagination {
+    flex-grow: 1;
+    width: 100vw;
+    margin: 1em; }
+
+.cassette-back {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: transparent url(images/cassette/cs_back.png) no-repeat center center; }
+  .cassette-back .wheels {
+    width: 125px;
+    height: 125px;
+    position: absolute;
+    top: 110px;
+    background: transparent;
+    border-radius: 50%; }
+  .cassette-back .left-wheel {
+    left: 109px;
+    box-shadow: 0 0 0 70px #000; }
+  .cassette-back .right-wheel {
+    right: 113px; }
+
+.cassette-front {
+  width: 100%;
+  height: 100%;
+  background: url(/assets/images/cassette/cs_front.png) no-repeat center center;
+  position: relative;
+  top: -379px; }
+  .cassette-front span {
+    color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 83px;
+    left: 67px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 20px; }
+  .cassette-front .tape-name {
+    position: absolute;
+    top: 51px;
+    left: 100px;
+    font-family: marker;
+    font-size: 25px;
+    width: 370px;
+    margin: 0;
+    text-indent: 90px; }
+
+.cassette-holder {
+  /* Tape elements */ }
+  .cassette-holder .tape {
+    width: 586px;
+    height: 379px;
+    margin: auto;
+    position: relative;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden; }
+    .cassette-holder .tape:hover .cassette-back, .cassette-holder .tape:hover .cassette-front {
+      -webkit-filter: blur(3px) grayscale(90%);
+      filter: blur(3px) grayscale(90%);
+      -webkit-transition: all, 0.5s ease-in-out;
+      -moz-transition: all, 0.5s ease-in-out;
+      transition: all, 0.5s ease-in-out; }
+    .cassette-holder .tape:hover .info-hover {
+      -webkit-transform: translate(0, -200%);
+      -moz-transform: translate(0, -200%);
+      -ms-transform: translate(0, -200%);
+      -o-transform: translate(0, -200%);
+      transform: translate(0, -200%); }
+    .cassette-holder .tape .info-hover {
+      padding: 1em 2em;
+      -webkit-transition: all, 0.5s ease-in-out;
+      -moz-transition: all, 0.5s ease-in-out;
+      transition: all, 0.5s ease-in-out;
+      background: rgba(0, 0, 0, 0.3);
+      height: inherit;
+      width: inherit;
+      overflow: hidden;
+      color: rgba(255, 255, 255, 0.7); }
+  .cassette-holder .vc-loader {
+    position: absolute;
+    width: 31px;
+    height: 31px;
+    bottom: 50px;
+    left: 50%;
+    margin: -15px 0 0 -15px;
+    background: transparent url(images/cassette/ajax-loader.gif) no-repeat center center;
+    display: none; }
+
+.cassette {
+  background: url("/assets/images/cassette/mixtable_bw.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw; }
+
+iframe.cassette {
+  width: 0px;
+  height: 0px;
+  visibility: hidden;
+  border: none; }
+
+/* Controls list */
+ul.vc-controls {
+  margin: 0 auto;
+  height: 70px;
+  width: 460px;
+  background: linear-gradient(top, rgba(170, 170, 170, 0.35) 0%, rgba(255, 255, 255, 0.44) 50%, rgba(255, 255, 255, 0.53) 100%);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom-color: rgba(255, 255, 255, 0.6);
+  padding: 8px;
+  box-shadow: inset 0 1px 0px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.8), 0 -1px 0 rgba(255, 255, 255, 0.4), inset 0 2px 19px rgba(0, 0, 0, 0.05), 0 2px 1px rgba(0, 0, 0, 0.06);
+  border-radius: 12px; }
+
+/* Controls list items */
+ul.vc-controls li {
+  display: block;
+  float: left;
+  width: 80px;
+  height: 50px;
+  line-height: 55px;
+  text-align: left;
+  padding: 10px;
+  margin: 0;
+  cursor: pointer;
+  background: #ddd url(/assets/images/cassette/metal.jpg) no-repeat center top;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 0 1px 2px rgba(255, 255, 255, 0.9), inset 0 -6px 5px rgba(0, 0, 0, 0.1), 0 6px 7px rgba(0, 0, 0, 0.3), 0 4px 1px rgba(0, 0, 0, 0.5);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+ul.vc-controls li:first-child {
+  border-radius: 8px 0 0 8px; }
+
+ul.vc-controls li:last-child {
+  border-radius: 0px 8px 8px 0px; }
+
+ul.vc-controls li.vc-control-play {
+  width: 120px; }
+
+/* Control icons */
+ul.vc-controls li span:before {
+  font-size: 16px;
+  line-height: 50px;
+  text-align: center;
+  float: left;
+  color: #444;
+  font-family: "playericons";
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.9);
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center; }
+
+li.vc-control-volume-off span:before {
+  content: "ðŸ”‡"; }
+
+li.vc-control-volume-down span:before {
+  content: "ðŸ”‰"; }
+
+li.vc-control-volume-up span:before {
+  content: "ðŸ”Š"; }
+
+ul.vc-controls li:hover {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 0 1px 2px rgba(255, 255, 255, 0.9), inset 0 -10px 15px rgba(0, 0, 0, 0.1), 0 6px 7px rgba(0, 0, 0, 0.3), 0 4px 1px rgba(0, 0, 0, 0.5); }
+
+/* Pressed (active) */
+ul.vc-controls li.vc-control-active {
+  height: 50px;
+  margin-top: 2px;
+  background-image: url(/assets/images/cassette/metal_dark.jpg);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18), inset 0 0 1px 2px rgba(255, 255, 255, 0.5), inset 0 -6px 5px rgba(0, 0, 0, 0.1), 0 6px 7px rgba(0, 0, 0, 0.3), 0 2px 1px rgba(0, 0, 0, 0.5); }
+
+/* Activated */
+ul.vc-controls li.vc-control-pressed,
+ul.vc-controls li.vc-control-active.vc-control-pressed {
+  height: 50px;
+  background-image: url(/assets/images/cassette/metal_dark.jpg);
+  margin-top: 4px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.5), inset 0 -10px 15px rgba(0, 0, 0, 0.2), 0 7px 5px rgba(255, 255, 255, 0.5); }
+
+.vc-volume-wrap {
+  display: none;
+  width: 118px;
+  height: 118px;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  margin-left: -318px;
+  background: linear-gradient(top, rgba(170, 170, 170, 0.35) 0%, rgba(255, 255, 255, 0.44) 50%, rgba(255, 255, 255, 0.53) 100%);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: inset 0 1px 0px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.6), 0 -1px 0 rgba(255, 255, 255, 0.4), inset 0 2px 19px rgba(0, 0, 0, 0.05), 0 2px 1px rgba(0, 0, 0, 0.06); }
+
+.vc-volume-wrap:after {
+  content: "Volume";
+  margin-top: 15px;
+  display: block; }
+
+/* Text style for controls */
+ul.vc-controls li,
+.vc-volume-wrap:after {
+  font-family: "Aldrich";
+  font-size: 10px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #666;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8); }
+
+.wheels div {
+  width: 100%;
+  height: 100%;
+  background: transparent url(/assets/images/cassette/cs_wheel.png) no-repeat center center; }
+@-webkit-keyframes rotateLeft {
+  from {
+    transform: rotate(0deg) translateZ(-1px); }
+  to {
+    transform: rotate(-360deg) translateZ(-1px); } }
+@-moz-keyframes rotateLeft {
+  from {
+    transform: rotate(0deg) translateZ(-1px); }
+  to {
+    transform: rotate(-360deg) translateZ(-1px); } }
+@keyframes rotateLeft {
+  from {
+    transform: rotate(0deg) translateZ(-1px); }
+  to {
+    transform: rotate(-360deg) translateZ(-1px); } }
+@-webkit-keyframes rotateRight {
+  from {
+    transform: rotate(0deg) translateZ(-1px); }
+  to {
+    transform: rotate(360deg) translateZ(-1px); } }
+@-moz-keyframes rotateRight {
+  from {
+    transform: rotate(0deg) translateZ(-1px); }
+  to {
+    transform: rotate(360deg) translateZ(-1px); } }
+@keyframes rotateRight {
+  from {
+    transform: rotate(0deg) translateZ(-1px); }
+  to {
+    transform: rotate(360deg) translateZ(-1px); } }
+.spin {
+  animation: rotateLeft 2s linear infinite forwards; }
+
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 90%; }
+@font-face {
+  html {
+    font-family: "wire";
+    font-style: normal;
+    font-weight: normal;
+    src: url("/assets/fonts/Electro.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/Electro.woff2") format("woff2"), url("/assets/fonts/Electro.woff") format("woff"), url("/assets/fonts/Electro.ttf") format("truetype"), url("/assets/fonts/Electro.svg#wire") format("svg"); } }
+@font-face {
+  html {
+    font-family: "marker";
+    font-style: normal;
+    font-weight: normal;
+    src: url("/assets/fonts/twin_marker.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/twin_marker.woff2") format("woff2"), url("/assets/fonts/twin_marker.woff") format("woff"), url("/assets/fonts/twin_marker.ttf") format("truetype"), url("/assets/fonts/twin_marker.svg#marker") format("svg"); } }
+  html li {
+    list-style: none; }
+  html ul {
+    margin: 0;
+    padding: 0; }
+  html a {
+    text-decoration: none; }
+
+.everything {
+  opacity: 1;
+  transition: opacity 0.5s ease; }
+
+.everything {
+  display: flex;
+  overflow: hidden; }
+
+.menu-placeholder {
+  display: inline-block;
+  height: 50px;
+  width: 50px; }
+
+.tracks {
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 200px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start; }
+
+.loader {
+  width: 100vw;
+  height: 100vh; }
+
+.about {
+  overflow-x: hidden; }
+
+/*# sourceMappingURL=app.css.map */

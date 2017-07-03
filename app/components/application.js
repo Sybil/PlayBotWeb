@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Ember from "ember";
 
-var ApplicationView = Ember.View.extend({
+export default Ember.Component.extend({
   didInsertElement: function() {
     $(window).load(function() {
       $('body').removeClass('preload');
@@ -8,4 +8,3 @@ var ApplicationView = Ember.View.extend({
   }
 });
 
-export default ApplicationView;

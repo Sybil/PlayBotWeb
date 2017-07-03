@@ -4,7 +4,7 @@ import Ember from 'ember';
 //  itemController: ['channel']
 //});
 
-var ChannelController = Ember.ObjectController.extend({
+var ChannelController = Ember.Controller.extend({
   weight: function() {
     return Math.sqrt(this.get('model.quantity'));
   }.property('quantity'),
@@ -16,7 +16,7 @@ var ChannelController = Ember.ObjectController.extend({
   style: function() {
     return ('width:'+this.get('weight')+'vw').htmlSafe();
   }.property('quantity'),
- 
+
   category: function() {
      if (this.get('weight') < 3) {
       return 'channel hided';
