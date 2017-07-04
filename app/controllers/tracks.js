@@ -3,7 +3,6 @@ import Ember from 'ember';
 var TracksController = Ember.Controller.extend({
   sortProperties: ['quantity'],
   sortAscending: true,
-
   queryParams: ['tag','user','channel','date','page','design'],
   tag: null,
   date: '',
@@ -17,7 +16,7 @@ var TracksController = Ember.Controller.extend({
     return this.set('page', 1);
   }.observes('tag','channel', 'user', 'date'),
 
-  colorGridDesign: function() { 
+  colorGridDesign: function() {
     return this.get('design') === 'colorGrid';
   }.property('design'),
 

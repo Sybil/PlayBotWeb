@@ -1,7 +1,5 @@
 import Ember from 'ember';
 
-var UsersController = Ember.ArrayController.extend({
+export default Ember.Controller.extend({
     itemController: 'user'
 });
-
-export default UsersController;

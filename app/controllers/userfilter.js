@@ -1,11 +1,16 @@
 import Ember from 'ember';
 
-var UserfilterController = Ember.Controller.extend({
+export default Ember.Controller.extend({
   sortProperties: ['quantity'],
   sortAscending: true,
 
   needs: 'tracks',
   userSelected: Ember.computed.alias('controllers.tracks.user'),
-});
 
-export default UserfilterController;
+  actions: {
+    chooseUser(user) {
+      this.set('userSelected', user);
+    }
+  }
+
+});

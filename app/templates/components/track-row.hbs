@@ -1,0 +1,18 @@
+{{#link-to 'track' track tagName='tr' data-trackid=track.id}}
+  <td class='track_author'>
+    {{#link-to 'tracks' (query-params user=track.author page=1) bubbles=false}}
+      {{track.author}}
+    {{/link-to}}
+  </td>
+  <td class='track_name'>{{track.name}}</td>
+  <td class='track_tags'>
+    {{#each tag in track.tags}}
+      {{#link-to 'tracks' (query-params tag=tag.name page=1) bubbles=false}}{{tag.name}}{{/link-to}}
+    {{/each}}
+  </td>
+  <td class='track_channel'>
+    {{#link-to 'tracks' (query-params channel=track.channel page=1) bubbles=false}}
+      {{track.channel}}
+    {{/link-to}}
+  </td>
+{{/link-to}}

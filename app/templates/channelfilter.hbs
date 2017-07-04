@@ -1,9 +1,8 @@
-{{view "select"
-       viewName='channelSelect'
-       classNames="channelfilter"
-       content=model
-       optionValuePath="content.name"
-       optionLabelPath="content.name"
-       value=channelSelected
-       prompt='Channels - all'
+{{#power-select
+  selected=channelrSelected
+  options=channels
+  onchange=(action "chooseChannel")
+  as |channel|
 }}
+  {{channel}}
+{{/power-select}}

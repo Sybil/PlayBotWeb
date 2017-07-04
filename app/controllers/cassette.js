@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-var CassetteController = Ember.Controller.extend({
+export default Ember.Controller.extend({
   n: 0,
   needs: 'tracks',
   totalPages: Ember.computed.alias('controllers.tracks.totalPages'),
@@ -21,13 +21,12 @@ var CassetteController = Ember.Controller.extend({
     }
   },
 
-  track: function() { 
-    return this.model.tracks.content[this.get('n')];
+  track: function() {
+    return this.model.tracks.objectAt(this.n);
   }.property('model','n'),
 
-
   play: function() {
-    var track = this.model.tracks.content[this.get('n')];
+    var track = this.model.tracks.objectAt(this.n);
     play_cassette(track);
   },
 
@@ -67,5 +66,3 @@ var CassetteController = Ember.Controller.extend({
     },
   }
 });
-
-export default CassetteController;

@@ -1,12 +1,15 @@
 import Ember from 'ember';
 
-var TagfilterController = Ember.ArrayController.extend({
+export default Ember.Controller.extend({
   sortProperties: ['quantity'],
   sortAscending: true,
 
   needs: 'tracks',
   tagSelected: Ember.computed.alias('controllers.tracks.tag'),
 
+  actions: {
+    chooseTag(tag) {
+      this.set('tagSelected', tag);
+    }
+  }
 });
-
-export default TagfilterController;

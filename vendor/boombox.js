@@ -22,7 +22,7 @@ function play_cassette(track) {
   else {
     next_cassette();
   }
-  //$('.tape-name').html(track.get('name'));
+  $('.tape-name').html(track.get('name'));
   startWheels(track);
 }
 function onCassetteEnding(event) {

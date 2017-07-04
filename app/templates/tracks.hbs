@@ -1,4 +1,4 @@
-<div {{bind-attr class=":tracks design"}}>
+<div class="{{design}}">
   {{render "filtersmenu" model}}
 
   {{outlet}}
@@ -6,13 +6,13 @@
     {{render "cassette" model}}
   {{/if}}
   {{#if tableDesign}}
-  <table class="tracks-table">
-    <tbody>
-      {{#each track in model.tracks}}
-        {{track-row track=track}}
-      {{/each}}
-    </tbody>
-  </table>
+    <table class="tracks-table">
+      <tbody>
+        {{#each model.tracks as |track|}}
+          {{track-row track=track}}
+        {{/each}}
+      </tbody>
+    </table>
   {{partial "pagination"}}
 {{/if}}
 {{#if colorGridDesign}}
@@ -20,20 +20,20 @@
         {{#each track in model.tracks}}
           {{#link-to 'track' track class="grid-item" data-trackid=track.id}}
             <p class='track'>
-              <span class="track_author">{{track.author}}</span> 
-              <span class="track_channel">{{track.channel}}</span> 
-              <br/> 
+              <span class="track_author">{{track.author}}</span>
+              <span class="track_channel">{{track.channel}}</span>
+              <br/>
             </p>
             <p>
               <br/>
               <span class="track_name">
-                {{track.name}} 
+                {{track.name}}
               </span>
             </p>
             <p class='track'>
               <br/>
               {{#each tag in track.tags}}
-                {{tag.name}} 
+                {{tag.name}}
               {{/each}}
             </p>
           {{/link-to}}

@@ -6,24 +6,25 @@ var Funnel = require('broccoli-funnel');
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
-    //sassOptions: {
-    //  extension: 'sass'
-    //},
     // Allow to handle some npm modules as vendors
     nodeModulesToVendor: [
       new Funnel('node_modules/cheet.js', {
         files: ['cheet.min.js']
       }),
-       new Funnel('node_modules/pace-js', {
+      new Funnel('node_modules/pace-js', {
         files: ['pace.min.js']
       }),
       new Funnel('node_modules/datedropper', {
         files: ['datedropper.min.js']
       }),
-       new Funnel('node_modules/spin.js', {
+      new Funnel('node_modules/spin.js', {
         files: ['spin.min.js']
       })
-    ]
+    ],
+    sassOptions: {
+      extension: 'sass',
+      includePaths: ['app/components'],
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated

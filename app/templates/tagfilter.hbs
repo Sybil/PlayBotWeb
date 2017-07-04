@@ -1,9 +1,8 @@
-{{view "select"
-       viewName='tagSelect'
-       classNames="tagfilter"
-       content=model
-       optionValuePath="content.name"
-       optionLabelPath="content.name"
-       value=tagSelected
-       prompt='Tags - all'
+{{#power-select
+  selected=tagSelected
+  options=tags
+  onchange=(action "chooseTag")
+  as |tag|
 }}
+  {{tag}}
+{{/power-select}}

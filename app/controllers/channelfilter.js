@@ -1,11 +1,15 @@
 import Ember from 'ember';
 
-var ChannelfilterController = Ember.Controller.extend({
+export default Ember.Controller.extend({
   sortProperties: ['quantity'],
   sortAscending: true,
 
   needs: 'tracks',
   channelSelected: Ember.computed.alias('controllers.tracks.channel'),
-});
 
-export default ChannelfilterController;
+  actions: {
+    chooseChannel(channel) {
+      this.set('channelSelected', channel);
+    }
+  }
+});

@@ -1,7 +1,5 @@
 import Ember from 'ember';
 
-var ChannelsController = Ember.ArrayController.extend({
+export default Ember.Controller.extend({
     itemController: 'channel'
 });
-
-export default ChannelsController;
