@@ -1,0 +1,10 @@
+{{#power-select
+  selected=tag
+  options=tags
+  searchField="tag.name"
+  searchEnabled=false
+  placeholder="Select a tag"
+  onchange=(action "chooseTag")
+  as |tag|}}
+  {{tag.name}}
+{{/power-select}}

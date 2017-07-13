@@ -1,0 +1,15 @@
+<ul class="filters-menu">
+  <li>
+    {{render "design"}}
+    <div class="menu-placeholder"></div>
+    <ul>
+      <li class="first-line">
+        {{tags-filter tags=model.tags tagSelected=tag}}{{render "channelfilter" model.channels}}
+      </li>
+      <li class="second-line">
+        {{render "userfilter" model.users}}
+        {{input type='text' value=date classNames='datefilter' placeholder=" Select a date"}}
+      </li>
+    </ul>
+  </li>
+</ul>

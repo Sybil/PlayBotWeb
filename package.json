@@ -40,7 +40,8 @@
     "ember-power-select": "^1.8.5",
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.13.0",
-    "ember-welcome-page": "^3.0.0"
+    "ember-welcome-page": "^3.0.0",
+    "normalize.css": "^4.1.1"
   },
   "engines": {
     "node": ">= 4"
@@ -52,8 +53,8 @@
     "ember-cli-bourbon": "^1.2.2",
     "ember-cli-neat": "0.0.6",
     "ember-cli-sass": "^7.0.0",
+    "ember-normalize": "^1.0.0",
     "loader.js": "^4.2.3",
-    "normalize.css": "^7.0.0",
     "pace-js": "^1.0.2",
     "spin.js": "^2.3.2"
   }

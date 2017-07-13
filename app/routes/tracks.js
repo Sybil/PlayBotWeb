@@ -13,28 +13,18 @@ export default Ember.Route.extend({
     page: { refreshModel: true }
   },
 
-  model: function(params) {
+  model(params) {
     var query = {};
-    if(Ember.isPresent(params.page)) {
-      query.page = params.page;
-    }
-    if (Ember.isPresent(params.tag)) {
-      query.tag = params.tag;
-    }
-    if (Ember.isPresent(params.channel)) {
-      query.channel = params.channel;
-    }
-    if (Ember.isPresent(params.user)) {
-      query.user = params.user;
-    }
-    if (Ember.isPresent(params.date)) {
-      query.date = params.date;
-    }
+    if (Ember.isPresent(params.page)) { query.page = params.page }
+    if (Ember.isPresent(params.tag)) { query.tag = params.tag }
+    if (Ember.isPresent(params.channel)) { query.channel = params.channel }
+    if (Ember.isPresent(params.user)) { query.user = params.user }
+    if (Ember.isPresent(params.date)) { query.date = params.date }
     return Ember.RSVP.hash({
       tags: this.store.findAll('tag'),
       channels: this.store.findAll('channel'),
       users: this.store.findAll('user'),
-      tracks: this.store.findAll('track', query)
+      tracks: this.store.query('track', query)
     });
   },
 

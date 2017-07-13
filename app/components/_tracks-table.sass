@@ -1,5 +1,5 @@
 .tracks-table
-  width: 100% //100vw
+  width: 100vw
   margin-right: calc(100% - 100vw)
   $base-border-color: gainsboro !default
   $base-background-color: white !default
@@ -21,7 +21,7 @@
   $table-padding: 0.8em 1em
   $table-font-light: rgba(0,0,0,0.6)
 
-  border-collapse: collapse//separate //collapse
+  border-collapse: collapse//separate
   border-spacing: 0
 
   tbody
@@ -44,11 +44,10 @@
     td.track_name
       @include span-columns(6)
     td.track_tags
-      @include span-columns(2)
+      @include span-columns(3)
     td.track_channel
       @include span-columns(2)
     td
       a
         color: gray //$table-font-light
-
 

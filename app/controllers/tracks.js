@@ -44,7 +44,7 @@ var TracksController = Ember.Controller.extend({
   notFirstPage: function() {
     return this.get('page') !== 1;
   }.property('page'),
-  
+
   notSecondPage: function() {
     return this.get('page') !== 2;
   }.property('page'),

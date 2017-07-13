@@ -1,11 +1,8 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
+export default Ember.Component.extend({
   sortProperties: ['quantity'],
   sortAscending: true,
-
-  needs: 'tracks',
-  tagSelected: Ember.computed.alias('controllers.tracks.tag'),
 
   actions: {
     chooseTag(tag) {
